@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>暖时光 - AI驱动的专业早教陪伴</title>
+    <meta name="description" content="为0-6岁孩子生成每日个性化学习计划，提供步骤清晰的活动与家长指导，自动记录并生成成长报告，省心省钱更有效。">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #FFB6C1 0%, #FF7F7F 25%, #87CEEB  75%, #98FB98 100%);
+        }
+        .soft-shadow {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #FF7F7F, #FFB6C1);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #FF6B6B, #FFA0A0);
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: linear-gradient(135deg, #87CEEB, #98FB98);
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #78BFEA, #85F085);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- 导航栏 -->
+    <nav class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 soft-shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent">
+                            暖时光
+                        </h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#" class="text-gray-800 hover:text-pink-500 font-medium transition-colors">首页</a>
+                        <a href="features.html" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">功能</a>
+                        <a href="solutions.html" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">解决方案</a>
+                        <a href="faq.html" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">常见问题</a>
+                        <a href="about.html" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">关于我们</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <button class="btn-primary text-white px-6 py-3 rounded-2xl font-semibold">
+                        关注上线
+                    </button>
+                </div>
+                <!-- 移动端菜单按钮 -->
+                <div class="md:hidden">
+                    <button class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="gradient-bg min-h-screen flex items-center relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <h1 class="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                        AI驱动的<br>
+                        <span class="bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+                            专业早教陪伴
+                        </span>
+                    </h1>
+                    <p class="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed">
+                        基于孩子发展阶段，每日生成个性化学习计划与成长评估<br>
+                        在家也能高质量早教
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <button class="btn-primary text-white px-8 py-4 rounded-2xl font-semibold text-lg">
+                            <i class="fas fa-play mr-2"></i>
+                            立即体验
+                        </button>
+                        <button class="btn-secondary text-white px-8 py-4 rounded-2xl font-semibold text-lg">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            查看功能
+                        </button>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=600&h=600&fit=crop&crop=face" 
+                             alt="温馨的亲子时光" 
+                             class="w-96 h-96 lg:w-[500px] lg:h-[500px] rounded-3xl object-cover soft-shadow">
+                        <div class="absolute -top-4 -right-4 bg-white/90 backdrop-blur-sm rounded-2xl p-4 soft-shadow">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-pink-500">0-6岁</div>
+                                <div class="text-sm text-gray-600">专业陪伴</div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 bg-white/90 backdrop-blur-sm rounded-2xl p-4 soft-shadow">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-blue-500">AI智能</div>
+                                <div class="text-sm text-gray-600">个性规划</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 三大卖点区域 -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                    为什么选择暖时光
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    结合AI智能和专业早教理念，为每个孩子量身定制成长方案
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 个性化计划 -->
+                <div class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-3xl p-8 card-hover">
+                    <div class="text-center">
+                        <div class="bg-gradient-to-r from-pink-400 to-pink-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-brain text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">个性化计划</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            结合年龄与历史记录，自动规划3-5个高质量活动，涵盖语言、体能、认知等全方位发展
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 专业指导 -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8 card-hover">
+                    <div class="text-center">
+                        <div class="bg-gradient-to-r from-blue-400 to-blue-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">专业指导</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            步骤清晰、家长指导与安全提示完善，让每个家长都能轻松开展高质量的早教活动
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 持续成长 -->
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 card-hover">
+                    <div class="text-center">
+                        <div class="bg-gradient-to-r from-green-400 to-green-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-chart-line text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">持续成长</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            记录时长与完成度，自动生成成长报告与能力雷达，见证每一点进步
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能展示区域 -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                    核心功能
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    从学习计划到成长追踪，一站式解决早教陪伴需求
+                </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- 今日学习计划 -->
+                <div class="bg-white rounded-3xl p-8 soft-shadow card-hover">
+                    <div class="flex items-start space-x-6">
+                        <div class="bg-gradient-to-r from-pink-400 to-coral-400 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-calendar-check text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">今日学习计划</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">
+                                孩子今天做什么，一目了然；预计时长与难度可控，让每一天的陪伴都有明确目标
+                            </p>
+                            <div class="bg-gray-50 rounded-2xl p-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-medium text-gray-700">语言启蒙：故事时间</span>
+                                    <span class="text-sm text-gray-500">15分钟</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-pink-400 to-pink-500 h-2 rounded-full w-3/4"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 学习活动详情 -->
+                <div class="bg-white rounded-3xl p-8 soft-shadow card-hover">
+                    <div class="flex items-start space-x-6">
+                        <div class="bg-gradient-to-r from-blue-400 to-blue-500 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-list-check text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">学习活动详情</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">
+                                所需材料与步骤清晰，家长轻松跟做，每个环节都有专业指导和安全提示
+                            </p>
+                            <div class="space-y-2">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-white text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700">准备彩色积木5-10块</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">2</div>
+                                    <span class="text-gray-700">引导孩子按颜色分类</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 成长报告 -->
+                <div class="bg-white rounded-3xl p-8 soft-shadow card-hover lg:col-span-2">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="flex items-center space-x-4 mb-6">
+                                <div class="bg-gradient-to-r from-green-400 to-green-500 w-14 h-14 rounded-2xl flex items-center justify-center">
+                                    <i class="fas fa-chart-pie text-white text-xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-800">成长报告</h3>
+                            </div>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                能力维度可视化，见证每一点进步。通过数据了解孩子的发展状况，科学调整陪伴策略
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-700">语言表达</span>
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-24 bg-gray-200 rounded-full h-2">
+                                            <div class="bg-gradient-to-r from-pink-400 to-pink-500 h-2 rounded-full w-4/5"></div>
+                                        </div>
+                                        <span class="text-sm font-medium text-gray-600">80%</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-700">精细动作</span>
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-24 bg-gray-200 rounded-full h-2">
+                                            <div class="bg-gradient-to-r from-blue-400 to-blue-500 h-2 rounded-full w-3/5"></div>
+                                        </div>
+                                        <span class="text-sm font-medium text-gray-600">65%</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-700">社交情感</span>
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-24 bg-gray-200 rounded-full h-2">
+                                            <div class="bg-gradient-to-r from-green-400 to-green-500 h-2 rounded-full w-4/5"></div>
+                                        </div>
+                                        <span class="text-sm font-medium text-gray-600">75%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-center">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop" 
+                                 alt="成长数据可视化" 
+                                 class="rounded-2xl soft-shadow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 统计与社会证明 -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                    值得信赖的选择
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    科学有效的早教方案，已经帮助众多家庭实现高质量陪伴
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 节省费用 -->
+                <div class="text-center">
+                    <div class="bg-gradient-to-r from-pink-100 to-pink-50 rounded-3xl p-8">
+                        <div class="text-5xl font-bold text-pink-500 mb-2">¥800+</div>
+                        <div class="text-lg font-medium text-gray-700 mb-2">平均每月节省</div>
+                        <div class="text-gray-600">早教机构费用</div>
+                    </div>
+                </div>
+
+                <!-- 连续陪伴 -->
+                <div class="text-center">
+                    <div class="bg-gradient-to-r from-blue-100 to-blue-50 rounded-3xl p-8">
+                        <div class="text-5xl font-bold text-blue-500 mb-2">100+</div>
+                        <div class="text-lg font-medium text-gray-700 mb-2">连续陪伴天数</div>
+                        <div class="text-gray-600">TOP用户记录</div>
+                    </div>
+                </div>
+
+                <!-- 家长好评 -->
+                <div class="text-center">
+                    <div class="bg-gradient-to-r from-green-100 to-green-50 rounded-3xl p-8">
+                        <div class="text-5xl font-bold text-green-500 mb-2">4.9</div>
+                        <div class="text-lg font-medium text-gray-700 mb-2">家长评分</div>
+                        <div class="text-gray-600 flex justify-center">
+                            <div class="flex space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA 行动召唤 -->
+    <section class="py-24 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                开始您的暖时光之旅
+            </h2>
+            <p class="text-xl text-white/90 mb-8 leading-relaxed">
+                App即将上线，现在关注可第一时间获得体验资格<br>
+                让科学的早教陪伴从今天开始
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary text-white px-8 py-4 rounded-2xl font-semibold text-lg">
+                    <i class="fas fa-bell mr-2"></i>
+                    关注上线动态
+                </button>
+                <button class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/30 transition-all">
+                    <i class="fas fa-download mr-2"></i>
+                    预约下载
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent mb-4">
+                        暖时光
+                    </h3>
+                    <p class="text-gray-600 mb-6 max-w-md">
+                        AI驱动的专业早教陪伴，给0-6岁孩子每日个性化学习计划与成长评估，让家长省心更安心。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">
+                            <i class="fab fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">
+                            <i class="fab fa-weibo text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-4">产品</h4>
+                    <ul class="space-y-3">
+                        <li><a href="features.html" class="text-gray-600 hover:text-pink-500 transition-colors">功能特性</a></li>
+                        <li><a href="solutions.html" class="text-gray-600 hover:text-pink-500 transition-colors">解决方案</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-pink-500 transition-colors">价格方案</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-4">支持</h4>
+                    <ul class="space-y-3">
+                        <li><a href="faq.html" class="text-gray-600 hover:text-pink-500 transition-colors">常见问题</a></li>
+                        <li><a href="about.html" class="text-gray-600 hover:text-pink-500 transition-colors">关于我们</a></li>
+                        <li><a href="privacy.html" class="text-gray-600 hover:text-pink-500 transition-colors">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-12 pt-8 text-center">
+                <p class="text-gray-500">
+                    © 2025 暖时光. 保留所有权利。
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

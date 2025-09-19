@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品功能 - 暖时光早教助手</title>
+    <meta name="description" content="暖时光四大核心功能：每日学习计划、学习活动详情、成长报告评估、家长引导系统，全方位支持0-6岁儿童早教陪伴。">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #FFB6C1 0%, #FF7F7F 25%, #87CEEB  75%, #98FB98 100%);
+        }
+        .soft-shadow {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #FF7F7F, #FFB6C1);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #FF6B6B, #FFA0A0);
+            transform: translateY(-2px);
+        }
+        .feature-tab {
+            transition: all 0.3s ease;
+        }
+        .feature-tab.active {
+            background: linear-gradient(135deg, #FF7F7F, #FFB6C1);
+            color: white;
+        }
+        .feature-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .feature-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- 导航栏 -->
+    <nav class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 soft-shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent">
+                            暖时光
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">首页</a>
+                        <a href="#" class="text-gray-800 hover:text-pink-500 font-medium transition-colors">功能</a>
+                        <a href="solutions.html" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">解决方案</a>
+                        <a href="faq.html" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">常见问题</a>
+                        <a href="about.html" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">关于我们</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <button class="btn-primary text-white px-6 py-3 rounded-2xl font-semibold">
+                        关注上线
+                    </button>
+                </div>
+                <!-- 移动端菜单按钮 -->
+                <div class="md:hidden">
+                    <button class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面头部 -->
+    <section class="gradient-bg py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl lg:text-6xl font-bold text-white mb-6">
+                强大功能
+                <span class="block text-4xl lg:text-5xl mt-2">让早教陪伴更简单</span>
+            </h1>
+            <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                从智能规划到成长追踪，四大核心功能全方位支持家庭早教，让每一天的陪伴都充满意义
+            </p>
+        </div>
+    </section>
+
+    <!-- 功能导航标签 -->
+    <section class="py-12 bg-white sticky top-20 z-40 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="feature-tab active px-8 py-4 rounded-2xl font-semibold transition-all" data-feature="planning">
+                    <i class="fas fa-calendar-check mr-2"></i>
+                    每日学习计划
+                </button>
+                <button class="feature-tab px-8 py-4 rounded-2xl font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all" data-feature="activities">
+                    <i class="fas fa-list-check mr-2"></i>
+                    学习活动详情
+                </button>
+                <button class="feature-tab px-8 py-4 rounded-2xl font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all" data-feature="reports">
+                    <i class="fas fa-chart-pie mr-2"></i>
+                    成长报告评估
+                </button>
+                <button class="feature-tab px-8 py-4 rounded-2xl font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all" data-feature="guidance">
+                    <i class="fas fa-user-guide mr-2"></i>
+                    家长引导系统
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能详情内容 -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- 每日学习计划 -->
+            <div class="feature-content active" id="planning">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <div class="bg-gradient-to-r from-pink-400 to-pink-500 w-20 h-20 rounded-3xl flex items-center justify-center mb-8">
+                            <i class="fas fa-calendar-check text-white text-3xl"></i>
+                        </div>
+                        <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                            每日学习计划
+                        </h2>
+                        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                            AI智能分析孩子的年龄阶段和历史学习数据，每天自动生成3-5个高质量活动，涵盖语言、音乐、精细动作、体能、认知、艺术、社交、情感八大发展维度。
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-pink-100 w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-brain text-pink-500"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">AI智能规划</h3>
+                                    <p class="text-gray-600">基于孩子发展规律和个人特点，智能推荐最适合的学习内容</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-100 w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-clock text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">时间可控</h3>
+                                    <p class="text-gray-600">每个活动标注预计时长和难度等级，方便家长合理安排</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-green-100 w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-target text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">目标明确</h3>
+                                    <p class="text-gray-600">每个活动都有明确的学习目标和预期效果，让陪伴更有方向</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="bg-white rounded-3xl p-8 soft-shadow">
+                            <div class="flex items-center justify-between mb-6">
+                                <h3 class="text-2xl font-bold text-gray-800">今天的计划</h3>
+                                <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium">3岁2个月</span>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="bg-pink-50 rounded-2xl p-4 border-l-4 border-pink-400">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="font-bold text-gray-800">语言启蒙：动物故事时间</h4>
+                                        <span class="text-sm text-gray-500">15分钟</span>
+                                    </div>
+                                    <p class="text-gray-600 text-sm mb-3">通过生动的动物故事，发展语言表达和想象力</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xs text-gray-500">难度：⭐⭐</span>
+                                        <span class="bg-pink-500 text-white px-3 py-1 rounded-full text-xs">进行中</span>
+                                    </div>
+                                </div>
+                                <div class="bg-blue-50 rounded-2xl p-4 border-l-4 border-blue-400">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="font-bold text-gray-800">精细动作：彩色积木分类</h4>
+                                        <span class="text-sm text-gray-500">20分钟</span>
+                                    </div>
+                                    <p class="text-gray-600 text-sm mb-3">锻炼手眼协调能力和颜色认知</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xs text-gray-500">难度：⭐⭐⭐</span>
+                                        <span class="bg-gray-300 text-gray-600 px-3 py-1 rounded-full text-xs">待开始</span>
+                                    </div>
+                                </div>
+                                <div class="bg-green-50 rounded-2xl p-4 border-l-4 border-green-400">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="font-bold text-gray-800">体能活动：亲子舞蹈</h4>
+                                        <span class="text-sm text-gray-500">10分钟</span>
+                                    </div>
+                                    <p class="text-gray-600 text-sm mb-3">增强身体协调性和亲子互动</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xs text-gray-500">难度：⭐</span>
+                                        <span class="bg-gray-300 text-gray-600 px-3 py-1 rounded-full text-xs">待开始</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 学习活动详情 -->
+            <div class="feature-content" id="activities">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 lg:order-1">
+                        <div class="bg-white rounded-3xl p-8 soft-shadow">
+                            <div class="flex items-center justify-between mb-6">
+                                <h3 class="text-2xl font-bold text-gray-800">彩色积木分类</h3>
+                                <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">精细动作</span>
+                            </div>
+                            
+                            <!-- 材料准备 -->
+                            <div class="mb-6">
+                                <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                                    <i class="fas fa-cube text-blue-500 mr-2"></i>
+                                    所需材料
+                                </h4>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div class="bg-gray-50 rounded-xl p-3 text-center">
+                                        <div class="text-2xl mb-1">🧱</div>
+                                        <div class="text-sm text-gray-600">彩色积木 10-15块</div>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-xl p-3 text-center">
+                                        <div class="text-2xl mb-1">🥣</div>
+                                        <div class="text-sm text-gray-600">分类小碗 3-4个</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 活动步骤 -->
+                            <div class="mb-6">
+                                <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                                    <i class="fas fa-list-ol text-green-500 mr-2"></i>
+                                    活动步骤
+                                </h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-start space-x-3">
+                                        <div class="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-1">1</div>
+                                        <p class="text-gray-700">准备不同颜色的积木，混合放在一起</p>
+                                    </div>
+                                    <div class="flex items-start space-x-3">
+                                        <div class="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-1">2</div>
+                                        <p class="text-gray-700">引导孩子观察积木的颜色差异</p>
+                                    </div>
+                                    <div class="flex items-start space-x-3">
+                                        <div class="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-1">3</div>
+                                        <p class="text-gray-700">示范将相同颜色的积木放在一起</p>
+                                    </div>
+                                    <div class="flex items-start space-x-3">
+                                        <div class="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-1">4</div>
+                                        <p class="text-gray-700">鼓励孩子自己尝试分类</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 家长提示 -->
+                            <div class="bg-yellow-50 rounded-2xl p-4 border-l-4 border-yellow-400">
+                                <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                                    <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+                                    家长提示
+                                </h4>
+                                <p class="text-gray-700 text-sm">保持耐心，让孩子按自己的节奏操作。如果孩子分错了，温和地引导而不是立即纠正。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <div class="bg-gradient-to-r from-blue-400 to-blue-500 w-20 h-20 rounded-3xl flex items-center justify-center mb-8">
+                            <i class="fas fa-list-check text-white text-3xl"></i>
+                        </div>
+                        <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                            学习活动详情
+                        </h2>
+                        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                            每个活动都提供详细的执行指南，包括所需材料、步骤说明、家长指导要点和安全提示，确保家长能够轻松有效地引导孩子完成学习。
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-100 w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-book text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">结构化指导</h3>
+                                    <p class="text-gray-600">清晰的步骤分解，让复杂的活动变得简单易懂</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-green-100 w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-shield-alt text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">安全保障</h3>
+                                    <p class="text-gray-600">详细的安全注意事项，确保活动过程安全无忧</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-purple-100 w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-lightbulb text-purple-500"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">拓展建议</h3>
+                                    <p class="text-gray-600">提供活动延伸和变化方案，增加学习的趣味性</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 成长报告评估 -->
+            <div class="feature-content" id="reports">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <div class="bg-gradient-to-r from-green-400 to-green-500 w-20 h-20 rounded-3xl flex items-center justify-center mb-8">
+                            <i class="fas fa-chart-pie text-white text-3xl"></i>
+                        </div>
+                        <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                            成长报告评估
+                        </h2>
+                        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                            基于孩子的学习数据，自动生成详细的成长报告和能力雷达图，让家长直观了解孩子各个发展维度的进展情况，科学调整陪伴策略。
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-green-100 w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-chart-line text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">多维度评估</h3>
+                                    <p class="text-gray-600">涵盖语言、体能、认知、社交等8大发展维度的全面评估</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-100 w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-trophy text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">成就追踪</h3>
+                                    <p class="text-gray-600">记录学习里程碑和重要成就，增强成长仪式感</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-purple-100 w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-users text-purple-500"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">同龄对比</h3>
+                                    <p class="text-gray-600">提供同龄儿童发展参考，帮助家长了解孩子发展水平</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-white rounded-3xl p-8 soft-shadow">
+                            <div class="flex items-center justify-between mb-6">
+                                <h3 class="text-2xl font-bold text-gray-800">本月成长报告</h3>
+                                <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium">2025年9月</span>
+                            </div>
+                            
+                            <!-- 能力雷达图模拟 -->
+                            <div class="mb-8 text-center">
+                                <div class="inline-block relative">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=200&fit=crop" 
+                                         alt="能力雷达图" 
+                                         class="rounded-2xl opacity-80">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="bg-white/90 rounded-2xl p-4 text-center">
+                                            <div class="text-2xl font-bold text-green-500">76%</div>
+                                            <div class="text-sm text-gray-600">综合发展度</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 能力维度详情 -->
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-700 font-medium">语言表达</span>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-32 bg-gray-200 rounded-full h-3">
+                                            <div class="bg-gradient-to-r from-pink-400 to-pink-500 h-3 rounded-full w-4/5"></div>
+                                        </div>
+                                        <span class="text-sm font-bold text-gray-600 w-12">80%</span>
+                                        <span class="text-green-500 text-sm">↗</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-700 font-medium">精细动作</span>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-32 bg-gray-200 rounded-full h-3">
+                                            <div class="bg-gradient-to-r from-blue-400 to-blue-500 h-3 rounded-full w-3/5"></div>
+                                        </div>
+                                        <span class="text-sm font-bold text-gray-600 w-12">65%</span>
+                                        <span class="text-green-500 text-sm">↗</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-700 font-medium">社交情感</span>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-32 bg-gray-200 rounded-full h-3">
+                                            <div class="bg-gradient-to-r from-green-400 to-green-500 h-3 rounded-full w-4/5"></div>
+                                        </div>
+                                        <span class="text-sm font-bold text-gray-600 w-12">78%</span>
+                                        <span class="text-blue-500 text-sm">→</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-700 font-medium">认知发展</span>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-32 bg-gray-200 rounded-full h-3">
+                                            <div class="bg-gradient-to-r from-purple-400 to-purple-500 h-3 rounded-full w-3/4"></div>
+                                        </div>
+                                        <span class="text-sm font-bold text-gray-600 w-12">72%</span>
+                                        <span class="text-green-500 text-sm">↗</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 本月亮点 -->
+                            <div class="mt-8 bg-green-50 rounded-2xl p-4">
+                                <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                                    <i class="fas fa-star text-yellow-500 mr-2"></i>
+                                    本月亮点
+                                </h4>
+                                <ul class="space-y-2 text-sm">
+                                    <li class="flex items-center text-gray-700">
+                                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                        连续陪伴 18 天，创造新记录！
+                                    </li>
+                                    <li class="flex items-center text-gray-700">
+                                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                        掌握 5 个新的颜色词汇
+                                    </li>
+                                    <li class="flex items-center text-gray-700">
+                                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                        精细动作能力提升明显
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 家长引导系统 -->
+            <div class="feature-content" id="guidance">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 lg:order-1">
+                        <div class="bg-white rounded-3xl p-8 soft-shadow">
+                            <div class="mb-6">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-4">实时引导示例</h3>
+                                
+                                <!-- 引导卡片 -->
+                                <div class="space-y-4">
+                                    <div class="bg-blue-50 rounded-2xl p-4 border-l-4 border-blue-400">
+                                        <div class="flex items-start space-x-3">
+                                            <div class="bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                                                <i class="fas fa-lightbulb"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-bold text-gray-800 mb-1">引导提示</h4>
+                                                <p class="text-gray-700 text-sm">当孩子注意力分散时，可以说："我们来看看这个红色的积木，它想找到它的红色朋友哦！"</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-green-50 rounded-2xl p-4 border-l-4 border-green-400">
+                                        <div class="flex items-start space-x-3">
+                                            <div class="bg-green-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                                                <i class="fas fa-thumbs-up"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-bold text-gray-800 mb-1">鼓励话术</h4>
+                                                <p class="text-gray-700 text-sm">"哇！你找得真棒！所有的蓝色积木都聚在一起了，它们看起来很开心呢！"</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-yellow-50 rounded-2xl p-4 border-l-4 border-yellow-400">
+                                        <div class="flex items-start space-x-3">
+                                            <div class="bg-yellow-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                                                <i class="fas fa-exclamation-triangle"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-bold text-gray-800 mb-1">注意事项</h4>
+                                                <p class="text-gray-700 text-sm">避免说"不对"或"错了"，改用"让我们一起再试试"这样的引导性语言。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 反馈表单 -->
+                            <div class="bg-gray-50 rounded-2xl p-6">
+                                <h4 class="font-bold text-gray-800 mb-4">活动反馈</h4>
+                                <div class="space-y-3">
+                                    <div>
+                                        <label class="text-sm text-gray-600 block mb-2">孩子的参与度</label>
+                                        <div class="flex space-x-2">
+                                            <span class="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-white text-sm">😊</span>
+                                            <span class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-400 text-sm">😐</span>
+                                            <span class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-400 text-sm">😕</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="text-sm text-gray-600 block mb-2">完成情况</label>
+                                        <div class="w-full bg-gray-200 rounded-full h-3">
+                                            <div class="bg-gradient-to-r from-green-400 to-green-500 h-3 rounded-full w-4/5"></div>
+                                        </div>
+                                        <span class="text-sm text-gray-500 mt-1 block">80% 完成</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <div class="bg-gradient-to-r from-purple-400 to-purple-500 w-20 h-20 rounded-3xl flex items-center justify-center mb-8">
+                            <i class="fas fa-user-guide text-white text-3xl"></i>
+                        </div>
+                        <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                            家长引导系统
+                        </h2>
+                        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                            在活动过程中提供实时的家长指导卡片，包含引导话术、鼓励方式和注意事项。活动结束后可填写反馈，帮助系统持续优化推荐内容。
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-purple-100 w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-comments text-purple-500"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">智能话术</h3>
+                                    <p class="text-gray-600">提供科学的引导话术和鼓励方式，提升亲子沟通质量</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-100 w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-feedback text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">反馈闭环</h3>
+                                    <p class="text-gray-600">收集活动反馈，持续优化推荐算法和活动内容</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-green-100 w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-chart-line text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">成长记录</h3>
+                                    <p class="text-gray-600">自动记录孩子的成长轨迹，形成珍贵的成长档案</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA 区域 -->
+    <section class="py-24 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                体验强大功能
+            </h2>
+            <p class="text-xl text-white/90 mb-8 leading-relaxed">
+                从智能规划到成长追踪，让每一天的陪伴都充满意义<br>
+                现在关注，第一时间体验完整功能
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary text-white px-8 py-4 rounded-2xl font-semibold text-lg">
+                    <i class="fas fa-bell mr-2"></i>
+                    关注上线动态
+                </button>
+                <button class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/30 transition-all">
+                    <i class="fas fa-home mr-2"></i>
+                    返回首页
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent mb-4">
+                        暖时光
+                    </h3>
+                    <p class="text-gray-600 mb-6 max-w-md">
+                        AI驱动的专业早教陪伴，给0-6岁孩子每日个性化学习计划与成长评估，让家长省心更安心。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">
+                            <i class="fab fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">
+                            <i class="fab fa-weibo text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-4">产品</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-600 hover:text-pink-500 transition-colors">功能特性</a></li>
+                        <li><a href="solutions.html" class="text-gray-600 hover:text-pink-500 transition-colors">解决方案</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-pink-500 transition-colors">价格方案</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-4">支持</h4>
+                    <ul class="space-y-3">
+                        <li><a href="faq.html" class="text-gray-600 hover:text-pink-500 transition-colors">常见问题</a></li>
+                        <li><a href="about.html" class="text-gray-600 hover:text-pink-500 transition-colors">关于我们</a></li>
+                        <li><a href="privacy.html" class="text-gray-600 hover:text-pink-500 transition-colors">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-12 pt-8 text-center">
+                <p class="text-gray-500">
+                    © 2025 暖时光. 保留所有权利。
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 功能标签切换
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.feature-tab');
+            const contents = document.querySelectorAll('.feature-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const targetFeature = this.getAttribute('data-feature');
+                    
+                    // 移除所有active状态
+                    tabs.forEach(t => {
+                        t.classList.remove('active');
+                        t.classList.add('bg-gray-100', 'text-gray-600', 'hover:bg-gray-200');
+                    });
+                    contents.forEach(c => c.classList.remove('active'));
+                    
+                    // 添加当前active状态
+                    this.classList.add('active');
+                    this.classList.remove('bg-gray-100', 'text-gray-600', 'hover:bg-gray-200');
+                    document.getElementById(targetFeature).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

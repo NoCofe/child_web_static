@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - 暖时光早教助手</title>
+    <meta name="description" content="了解暖时光的品牌故事、团队愿景和产品理念。我们致力于让每个家庭都能享受高质量的早教陪伴服务。">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #FFB6C1 0%, #FF7F7F 25%, #87CEEB  75%, #98FB98 100%);
+        }
+        .soft-shadow {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #FF7F7F, #FFB6C1);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #FF6B6B, #FFA0A0);
+            transform: translateY(-2px);
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .timeline-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .team-member {
+            transition: all 0.3s ease;
+        }
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #FF7F7F, #87CEEB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .value-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- 导航栏 -->
+    <nav class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 soft-shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent">
+                            暖时光
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">首页</a>
+                        <a href="features.html" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">功能</a>
+                        <a href="solutions.html" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">解决方案</a>
+                        <a href="faq.html" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">常见问题</a>
+                        <a href="#" class="text-gray-800 hover:text-pink-500 font-medium transition-colors">关于我们</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <button class="btn-primary text-white px-6 py-3 rounded-2xl font-semibold">
+                        关注上线
+                    </button>
+                </div>
+                <!-- 移动端菜单按钮 -->
+                <div class="md:hidden">
+                    <button class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面头部 -->
+    <section class="gradient-bg py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-5xl lg:text-6xl font-bold text-white mb-6">
+                关于暖时光
+                <span class="block text-4xl lg:text-5xl mt-2">让爱更有温度</span>
+            </h1>
+            <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                我们相信，每个孩子都值得拥有最好的陪伴。<br>
+                科技让专业早教触手可及，温暖让成长充满爱意。
+            </p>
+        </div>
+        <!-- 装饰元素 -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl"></div>
+            <div class="absolute bottom-20 right-10 w-48 h-48 bg-white/10 rounded-full blur-xl"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/5 rounded-full blur-2xl"></div>
+        </div>
+    </section>
+
+    <!-- 品牌故事 -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-8">
+                        我们的故事
+                    </h2>
+                    <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
+                        <p>
+                            <strong class="text-gray-800">暖时光</strong>诞生于一个普通的周末午后。创始团队中的一位新手爸爸，看着刚学会爬行的女儿，突然意识到自己对如何科学陪伴孩子成长一无所知。
+                        </p>
+                        <p>
+                            市面上的早教机构费用高昂，时间地点受限；网上的育儿知识过于分散，缺乏系统性指导。<span class="text-pink-500 font-medium">如何让每个家庭都能享受专业、便捷、经济的早教服务？</span>这个问题成为了我们创业的初心。
+                        </p>
+                        <p>
+                            我们深信，<strong class="text-gray-800">最好的老师是父母，最好的课堂是家庭</strong>。通过AI技术和专业的早教理念，我们希望帮助每位家长成为孩子成长路上最好的陪伴者。
+                        </p>
+                        <p class="text-pink-600 font-medium italic">
+                            "让爱更有温度，让陪伴更有质量" —— 这就是暖时光存在的意义。
+                        </p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=600&h=400&fit=crop" 
+                         alt="温馨的家庭时光" 
+                         class="rounded-3xl soft-shadow w-full">
+                    <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 soft-shadow max-w-xs">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-pink-500 mb-1">100万+</div>
+                            <div class="text-sm text-gray-600">家庭信赖之选</div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-6 -left-6 bg-white rounded-2xl p-6 soft-shadow max-w-xs">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-blue-500 mb-1">专业团队</div>
+                            <div class="text-sm text-gray-600">早教+AI专家</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心价值观 -->
+    <section class="py-24 bg-gray-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                    我们的价值观
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    这些核心理念指引着我们的每一个决策和行动
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- 科学专业 -->
+                <div class="value-card rounded-3xl p-8 text-center card-hover">
+                    <div class="bg-gradient-to-r from-pink-400 to-pink-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-microscope text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">科学专业</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        基于儿童发展心理学和早期教育理论，确保每个活动都有科学依据和专业支撑
+                    </p>
+                </div>
+
+                <!-- 普惠共享 -->
+                <div class="value-card rounded-3xl p-8 text-center card-hover">
+                    <div class="bg-gradient-to-r from-blue-400 to-blue-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-handshake text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">普惠共享</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        让优质早教不再是少数人的特权，用技术降低成本，让更多家庭受益
+                    </p>
+                </div>
+
+                <!-- 温暖陪伴 -->
+                <div class="value-card rounded-3xl p-8 text-center card-hover">
+                    <div class="bg-gradient-to-r from-green-400 to-green-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">温暖陪伴</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        技术只是工具，真正的核心是温暖的亲子陪伴和情感连接
+                    </p>
+                </div>
+
+                <!-- 持续创新 -->
+                <div class="value-card rounded-3xl p-8 text-center card-hover">
+                    <div class="bg-gradient-to-r from-purple-400 to-purple-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-lightbulb text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">持续创新</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        不断探索AI技术在早教领域的应用，持续优化产品体验和效果
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 发展历程 -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                    发展历程
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    从一个想法到改变千万家庭的产品
+                </p>
+            </div>
+
+            <div class="relative">
+                <!-- 时间轴线 -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-pink-400 via-blue-400 to-green-400"></div>
+                
+                <div class="space-y-16">
+                    <!-- 2024年初 - 项目启动 -->
+                    <div class="timeline-item flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="bg-pink-50 rounded-2xl p-6">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">项目启动</h3>
+                                <p class="text-gray-600 mb-2">2024年1月</p>
+                                <p class="text-gray-700">
+                                    团队组建完成，确定产品方向和核心功能。开始进行市场调研和用户需求分析。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="relative flex items-center justify-center">
+                            <div class="w-6 h-6 bg-pink-400 rounded-full border-4 border-white z-10"></div>
+                        </div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+
+                    <!-- 2024年中 - 产品研发 -->
+                    <div class="timeline-item flex items-center">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="relative flex items-center justify-center">
+                            <div class="w-6 h-6 bg-blue-400 rounded-full border-4 border-white z-10"></div>
+                        </div>
+                        <div class="w-1/2 pl-8">
+                            <div class="bg-blue-50 rounded-2xl p-6">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">产品研发</h3>
+                                <p class="text-gray-600 mb-2">2024年6月</p>
+                                <p class="text-gray-700">
+                                    AI算法模型训练完成，核心功能开发就绪。邀请100个家庭参与内测，收集宝贵反馈。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2024年底 - 产品优化 -->
+                    <div class="timeline-item flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="bg-green-50 rounded-2xl p-6">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">产品优化</h3>
+                                <p class="text-gray-600 mb-2">2024年12月</p>
+                                <p class="text-gray-700">
+                                    基于用户反馈持续优化，新增家长引导系统，完善成长报告功能。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="relative flex items-center justify-center">
+                            <div class="w-6 h-6 bg-green-400 rounded-full border-4 border-white z-10"></div>
+                        </div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+
+                    <!-- 2025年 - 正式上线 -->
+                    <div class="timeline-item flex items-center">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="relative flex items-center justify-center">
+                            <div class="w-6 h-6 bg-purple-400 rounded-full border-4 border-white z-10"></div>
+                        </div>
+                        <div class="w-1/2 pl-8">
+                            <div class="bg-purple-50 rounded-2xl p-6">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">正式上线</h3>
+                                <p class="text-gray-600 mb-2">2025年春季</p>
+                                <p class="text-gray-700">
+                                    产品正式发布，面向全国用户开放。开启让每个家庭都能享受专业早教的新时代。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 团队介绍 -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                    核心团队
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    来自不同领域的专业人士，因为共同的愿景而聚在一起
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 创始人 -->
+                <div class="team-member bg-white rounded-3xl p-8 text-center soft-shadow">
+                    <div class="relative inline-block mb-6">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" 
+                             alt="创始人" 
+                             class="w-24 h-24 rounded-full mx-auto object-cover">
+                        <div class="absolute -bottom-2 -right-2 bg-gradient-to-r from-pink-400 to-pink-500 w-8 h-8 rounded-full flex items-center justify-center">
+                            <i class="fas fa-crown text-white text-sm"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">李明</h3>
+                    <p class="text-pink-500 font-medium mb-4">创始人 & CEO</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        前腾讯产品总监，两个孩子的父亲。10年互联网产品经验，专注于用户体验和产品创新。
+                    </p>
+                </div>
+
+                <!-- 技术负责人 -->
+                <div class="team-member bg-white rounded-3xl p-8 text-center soft-shadow">
+                    <div class="relative inline-block mb-6">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" 
+                             alt="技术负责人" 
+                             class="w-24 h-24 rounded-full mx-auto object-cover">
+                        <div class="absolute -bottom-2 -right-2 bg-gradient-to-r from-blue-400 to-blue-500 w-8 h-8 rounded-full flex items-center justify-center">
+                            <i class="fas fa-code text-white text-sm"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">张伟</h3>
+                    <p class="text-blue-500 font-medium mb-4">CTO</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        前阿里巴巴高级工程师，AI算法专家。在机器学习和个性化推荐领域有丰富经验。
+                    </p>
+                </div>
+
+                <!-- 早教专家 -->
+                <div class="team-member bg-white rounded-3xl p-8 text-center soft-shadow">
+                    <div class="relative inline-block mb-6">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b5bb?w=150&h=150&fit=crop&crop=face" 
+                             alt="早教专家" 
+                             class="w-24 h-24 rounded-full mx-auto object-cover">
+                        <div class="absolute -bottom-2 -right-2 bg-gradient-to-r from-green-400 to-green-500 w-8 h-8 rounded-full flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white text-sm"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">王静</h3>
+                    <p class="text-green-500 font-medium mb-4">早教专家</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        北师大学前教育博士，15年早教经验。主导课程体系设计，确保内容的专业性和科学性。
+                    </p>
+                </div>
+
+                <!-- 产品设计师 -->
+                <div class="team-member bg-white rounded-3xl p-8 text-center soft-shadow">
+                    <div class="relative inline-block mb-6">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face" 
+                             alt="产品设计师" 
+                             class="w-24 h-24 rounded-full mx-auto object-cover">
+                        <div class="absolute -bottom-2 -right-2 bg-gradient-to-r from-purple-400 to-purple-500 w-8 h-8 rounded-full flex items-center justify-center">
+                            <i class="fas fa-palette text-white text-sm"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">陈美</h3>
+                    <p class="text-purple-500 font-medium mb-4">首席设计师</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        前字节跳动资深设计师，专注于家庭产品设计。致力于创造温暖、直观的用户体验。
+                    </p>
+                </div>
+
+                <!-- 运营总监 -->
+                <div class="team-member bg-white rounded-3xl p-8 text-center soft-shadow">
+                    <div class="relative inline-block mb-6">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face" 
+                             alt="运营总监" 
+                             class="w-24 h-24 rounded-full mx-auto object-cover">
+                        <div class="absolute -bottom-2 -right-2 bg-gradient-to-r from-orange-400 to-orange-500 w-8 h-8 rounded-full flex items-center justify-center">
+                            <i class="fas fa-chart-line text-white text-sm"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">刘强</h3>
+                    <p class="text-orange-500 font-medium mb-4">运营总监</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        前小红书运营总监，深谙母婴市场和用户运营。负责用户增长和社区建设。
+                    </p>
+                </div>
+
+                <!-- 数据科学家 -->
+                <div class="team-member bg-white rounded-3xl p-8 text-center soft-shadow">
+                    <div class="relative inline-block mb-6">
+                        <img src="https://images.unsplash.com/photo-1507101105822-7472b28e22ac?w=150&h=150&fit=crop&crop=face" 
+                             alt="数据科学家" 
+                             class="w-24 h-24 rounded-full mx-auto object-cover">
+                        <div class="absolute -bottom-2 -right-2 bg-gradient-to-r from-indigo-400 to-indigo-500 w-8 h-8 rounded-full flex items-center justify-center">
+                            <i class="fas fa-chart-bar text-white text-sm"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">赵磊</h3>
+                    <p class="text-indigo-500 font-medium mb-4">数据科学家</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        前滴滴算法工程师，专精于推荐系统和用户行为分析，负责个性化推荐算法优化。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 统计数据 -->
+    <section class="py-24 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                    我们的成果
+                </h2>
+                <p class="text-xl text-white/90 max-w-3xl mx-auto">
+                    用数字说话，用结果证明我们的价值
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- 服务家庭数 -->
+                <div class="text-center">
+                    <div class="stats-counter" data-target="10000">0+</div>
+                    <div class="text-xl font-semibold text-white mb-2">服务家庭</div>
+                    <div class="text-white/80">内测期间积累</div>
+                </div>
+
+                <!-- 学习活动数 -->
+                <div class="text-center">
+                    <div class="stats-counter" data-target="500">0+</div>
+                    <div class="text-xl font-semibold text-white mb-2">学习活动</div>
+                    <div class="text-white/80">专业早教内容</div>
+                </div>
+
+                <!-- 用户满意度 -->
+                <div class="text-center">
+                    <div class="stats-counter" data-target="95">0%</div>
+                    <div class="text-xl font-semibold text-white mb-2">用户满意度</div>
+                    <div class="text-white/80">家长好评率</div>
+                </div>
+
+                <!-- 平均节省费用 -->
+                <div class="text-center">
+                    <div class="stats-counter" data-target="800">¥0+</div>
+                    <div class="text-xl font-semibold text-white mb-2">月均节省</div>
+                    <div class="text-white/80">早教费用</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 未来愿景 -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-8">
+                        未来愿景
+                    </h2>
+                    <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
+                        <p>
+                            我们的愿景是<strong class="text-gray-800">成为全球领先的智能早教平台</strong>，让每个孩子都能享受到个性化、专业化的早期教育服务。
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-pink-100 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fas fa-globe text-pink-500"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-gray-800 mb-2">覆盖更多地区</h3>
+                                    <p>将服务扩展到全球，让不同文化背景的家庭都能受益</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fas fa-robot text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-gray-800 mb-2">技术持续创新</h3>
+                                    <p>运用更先进的AI技术，提供更精准的个性化服务</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fas fa-users text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-gray-800 mb-2">构建生态系统</h3>
+                                    <p>连接家长、专家、机构，打造完整的早教生态圈</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop" 
+                         alt="美好的未来" 
+                         class="rounded-3xl soft-shadow w-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-3xl"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <h4 class="text-2xl font-bold mb-2">让每个孩子</h4>
+                        <p class="text-lg">都拥有最好的开始</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA 区域 -->
+    <section class="py-24 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                与我们一起创造未来
+            </h2>
+            <p class="text-xl text-white/90 mb-8 leading-relaxed">
+                加入暖时光，见证孩子的每一次成长，<br>
+                与千万家庭一起，让爱更有温度
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary text-white px-8 py-4 rounded-2xl font-semibold text-lg">
+                    <i class="fas fa-bell mr-2"></i>
+                    关注上线动态
+                </button>
+                <button class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/30 transition-all">
+                    <i class="fas fa-envelope mr-2"></i>
+                    联系我们
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent mb-4">
+                        暖时光
+                    </h3>
+                    <p class="text-gray-600 mb-6 max-w-md">
+                        AI驱动的专业早教陪伴，给0-6岁孩子每日个性化学习计划与成长评估，让家长省心更安心。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">
+                            <i class="fab fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">
+                            <i class="fab fa-weibo text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-4">产品</h4>
+                    <ul class="space-y-3">
+                        <li><a href="features.html" class="text-gray-600 hover:text-pink-500 transition-colors">功能特性</a></li>
+                        <li><a href="solutions.html" class="text-gray-600 hover:text-pink-500 transition-colors">解决方案</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-pink-500 transition-colors">价格方案</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-4">支持</h4>
+                    <ul class="space-y-3">
+                        <li><a href="faq.html" class="text-gray-600 hover:text-pink-500 transition-colors">常见问题</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-pink-500 transition-colors">关于我们</a></li>
+                        <li><a href="privacy.html" class="text-gray-600 hover:text-pink-500 transition-colors">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-12 pt-8 text-center">
+                <p class="text-gray-500">
+                    © 2025 暖时光. 保留所有权利。
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 数字计数动画
+        document.addEventListener('DOMContentLoaded', function() {
+            const counters = document.querySelectorAll('.stats-counter');
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const increment = target / 100;
+                        let current = 0;
+                        const isPrice = counter.textContent.includes('¥');
+                        
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            
+                            const displayValue = Math.floor(current);
+                            if (isPrice) {
+                                counter.textContent = `¥${displayValue}+`;
+                            } else if (counter.textContent.includes('%')) {
+                                counter.textContent = `${displayValue}%`;
+                            } else {
+                                counter.textContent = `${displayValue}+`;
+                            }
+                        }, 20);
+                        
+                        observer.unobserve(counter);
+                    }
+                });
+            }, observerOptions);
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+
+            // 时间轴动画
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const timelineObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.3
+            });
+
+            timelineItems.forEach(item => {
+                timelineObserver.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
