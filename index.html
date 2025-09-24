@@ -3,421 +3,770 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>暖时光 - AI驱动的专业早教陪伴</title>
+    <title>暖时光 - 陪伴孩子的时光是暖洋洋的</title>
     <meta name="description" content="为0-6岁孩子生成每日个性化学习计划，提供步骤清晰的活动与家长指导，自动记录并生成成长报告，省心省钱更有效。">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body::-webkit-scrollbar {
-            display: none;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        :root {
+            --primary-color: #007AFF;
+            --secondary-color: #5AC8FA;
+            --text-primary: #1D1D1F;
+            --text-secondary: #86868B;
+            --background: #FBFBFD;
+            --surface: #FFFFFF;
+            --border: #D2D2D7;
+        }
+
         body {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.47;
+            color: var(--text-primary);
+            background: var(--background);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        .gradient-bg {
-            background: linear-gradient(135deg, #FFB6C1 0%, #FF7F7F 25%, #87CEEB  75%, #98FB98 100%);
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(251, 251, 253, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 0.5px solid var(--border);
+            z-index: 100;
         }
-        .soft-shadow {
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+        .nav-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 44px;
         }
-        .card-hover {
+
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-cta {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 400;
             transition: all 0.3s ease;
         }
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+        .nav-cta:hover {
+            transform: scale(1.05);
         }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 22px 80px;
+            text-align: center;
+            background: var(--surface);
+        }
+
+        .hero-container {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .hero-headline {
+            font-size: 56px;
+            font-weight: 600;
+            line-height: 1.07;
+            letter-spacing: -0.005em;
+            margin-bottom: 18px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subheadline {
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 1.14;
+            letter-spacing: 0.007em;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .hero-description {
+            font-size: 19px;
+            line-height: 1.42;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
         .btn-primary {
-            background: linear-gradient(135deg, #FF7F7F, #FFB6C1);
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 22px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 400;
             transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
+
         .btn-primary:hover {
-            background: linear-gradient(135deg, #FF6B6B, #FFA0A0);
-            transform: translateY(-2px);
+            transform: scale(1.05);
         }
+
         .btn-secondary {
-            background: linear-gradient(135deg, #87CEEB, #98FB98);
+            background: transparent;
+            color: var(--primary-color);
+            padding: 12px 24px;
+            border: 1px solid var(--primary-color);
+            border-radius: 22px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 400;
             transition: all 0.3s ease;
         }
+
         .btn-secondary:hover {
-            background: linear-gradient(135deg, #78BFEA, #85F085);
-            transform: translateY(-2px);
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .hero-visual {
+            position: relative;
+            margin-top: 40px;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 22px;
+            background: var(--background);
+        }
+
+        .features-container {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.08;
+            letter-spacing: -0.003em;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 21px;
+            line-height: 1.38;
+            font-weight: 400;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 24px;
+            color: white;
+        }
+
+        .feature-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .feature-description {
+            font-size: 17px;
+            line-height: 1.47;
+            color: var(--text-secondary);
+        }
+
+        /* Product Showcase */
+        .showcase {
+            padding: 80px 22px;
+            background: var(--surface);
+        }
+
+        .showcase-container {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .showcase-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .showcase-item:nth-child(even) .showcase-content {
+            order: 2;
+        }
+
+        .showcase-item:nth-child(even) .showcase-visual {
+            order: 1;
+        }
+
+        .showcase-title {
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 1.1;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .showcase-description {
+            font-size: 19px;
+            line-height: 1.42;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .showcase-features {
+            list-style: none;
+        }
+
+        .showcase-features li {
+            font-size: 17px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .showcase-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .showcase-image {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 22px;
+            background: var(--background);
+        }
+
+        .stats-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 17px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .stat-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 80px 22px;
+            background: var(--surface);
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 1.1;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            font-size: 19px;
+            line-height: 1.42;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--background);
+            padding: 40px 22px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-headline {
+                font-size: 36px;
+            }
+
+            .hero-subheadline {
+                font-size: 21px;
+            }
+
+            .hero-description {
+                font-size: 17px;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .showcase-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .showcase-item:nth-child(even) .showcase-content,
+            .showcase-item:nth-child(even) .showcase-visual {
+                order: unset;
+            }
+
+            .showcase-title {
+                font-size: 28px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-title {
+                font-size: 28px;
+            }
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-    <!-- 导航栏 -->
-    <nav class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 soft-shadow">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0">
-                        <h1 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent">
-                            暖时光
-                        </h1>
-                    </div>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#" class="text-gray-800 hover:text-pink-500 font-medium transition-colors">首页</a>
-                        <a href="features.html" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">功能</a>
-                        <a href="solutions.html" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">解决方案</a>
-                        <a href="faq.html" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">常见问题</a>
-                        <a href="about.html" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">关于我们</a>
-                    </div>
-                </div>
-                <div class="hidden md:block">
-                    <button class="btn-primary text-white px-6 py-3 rounded-2xl font-semibold">
-                        关注上线
-                    </button>
-                </div>
-                <!-- 移动端菜单按钮 -->
-                <div class="md:hidden">
-                    <button class="text-gray-700">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">暖时光</a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">首页</a></li>
+                <li><a href="/features" class="nav-link">功能</a></li>
+                <li><a href="/solutions" class="nav-link">解决方案</a></li>
+                <li><a href="/about" class="nav-link">关于我们</a></li>
+            </ul>
+            <a href="#" class="nav-cta">关注上线</a>
         </div>
     </nav>
 
-    <!-- Hero 区域 -->
-    <section class="gradient-bg min-h-screen flex items-center relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="text-center lg:text-left">
-                    <h1 class="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                        AI驱动的<br>
-                        <span class="bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-                            专业早教陪伴
-                        </span>
-                    </h1>
-                    <p class="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed">
-                        基于孩子发展阶段，每日生成个性化学习计划与成长评估<br>
-                        在家也能高质量早教
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <button class="btn-primary text-white px-8 py-4 rounded-2xl font-semibold text-lg">
-                            <i class="fas fa-play mr-2"></i>
-                            立即体验
-                        </button>
-                        <button class="btn-secondary text-white px-8 py-4 rounded-2xl font-semibold text-lg">
-                            <i class="fas fa-info-circle mr-2"></i>
-                            查看功能
-                        </button>
-                    </div>
-                </div>
-                <div class="flex justify-center">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=600&h=600&fit=crop&crop=face" 
-                             alt="温馨的亲子时光" 
-                             class="w-96 h-96 lg:w-[500px] lg:h-[500px] rounded-3xl object-cover soft-shadow">
-                        <div class="absolute -top-4 -right-4 bg-white/90 backdrop-blur-sm rounded-2xl p-4 soft-shadow">
-                            <div class="text-center">
-                                <div class="text-3xl font-bold text-pink-500">0-6岁</div>
-                                <div class="text-sm text-gray-600">专业陪伴</div>
-                            </div>
-                        </div>
-                        <div class="absolute -bottom-4 -left-4 bg-white/90 backdrop-blur-sm rounded-2xl p-4 soft-shadow">
-                            <div class="text-center">
-                                <div class="text-3xl font-bold text-blue-500">AI智能</div>
-                                <div class="text-sm text-gray-600">个性规划</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 三大卖点区域 -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-                    为什么选择暖时光
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    结合AI智能和专业早教理念，为每个孩子量身定制成长方案
-                </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- 个性化计划 -->
-                <div class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-3xl p-8 card-hover">
-                    <div class="text-center">
-                        <div class="bg-gradient-to-r from-pink-400 to-pink-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-brain text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">个性化计划</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            结合年龄与历史记录，自动规划3-5个高质量活动，涵盖语言、体能、认知等全方位发展
-                        </p>
-                    </div>
-                </div>
-
-                <!-- 专业指导 -->
-                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8 card-hover">
-                    <div class="text-center">
-                        <div class="bg-gradient-to-r from-blue-400 to-blue-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-graduation-cap text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">专业指导</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            步骤清晰、家长指导与安全提示完善，让每个家长都能轻松开展高质量的早教活动
-                        </p>
-                    </div>
-                </div>
-
-                <!-- 持续成长 -->
-                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 card-hover">
-                    <div class="text-center">
-                        <div class="bg-gradient-to-r from-green-400 to-green-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-chart-line text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">持续成长</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            记录时长与完成度，自动生成成长报告与能力雷达，见证每一点进步
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 功能展示区域 -->
-    <section class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-                    核心功能
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    从学习计划到成长追踪，一站式解决早教陪伴需求
-                </p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- 今日学习计划 -->
-                <div class="bg-white rounded-3xl p-8 soft-shadow card-hover">
-                    <div class="flex items-start space-x-6">
-                        <div class="bg-gradient-to-r from-pink-400 to-coral-400 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-calendar-check text-white text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-4">今日学习计划</h3>
-                            <p class="text-gray-600 mb-4 leading-relaxed">
-                                孩子今天做什么，一目了然；预计时长与难度可控，让每一天的陪伴都有明确目标
-                            </p>
-                            <div class="bg-gray-50 rounded-2xl p-4">
-                                <div class="flex items-center justify-between mb-2">
-                                    <span class="font-medium text-gray-700">语言启蒙：故事时间</span>
-                                    <span class="text-sm text-gray-500">15分钟</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2">
-                                    <div class="bg-gradient-to-r from-pink-400 to-pink-500 h-2 rounded-full w-3/4"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 学习活动详情 -->
-                <div class="bg-white rounded-3xl p-8 soft-shadow card-hover">
-                    <div class="flex items-start space-x-6">
-                        <div class="bg-gradient-to-r from-blue-400 to-blue-500 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-list-check text-white text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-4">学习活动详情</h3>
-                            <p class="text-gray-600 mb-4 leading-relaxed">
-                                所需材料与步骤清晰，家长轻松跟做，每个环节都有专业指导和安全提示
-                            </p>
-                            <div class="space-y-2">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-check text-white text-xs"></i>
-                                    </div>
-                                    <span class="text-gray-700">准备彩色积木5-10块</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">2</div>
-                                    <span class="text-gray-700">引导孩子按颜色分类</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 成长报告 -->
-                <div class="bg-white rounded-3xl p-8 soft-shadow card-hover lg:col-span-2">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <div class="flex items-center space-x-4 mb-6">
-                                <div class="bg-gradient-to-r from-green-400 to-green-500 w-14 h-14 rounded-2xl flex items-center justify-center">
-                                    <i class="fas fa-chart-pie text-white text-xl"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold text-gray-800">成长报告</h3>
-                            </div>
-                            <p class="text-gray-600 mb-6 leading-relaxed">
-                                能力维度可视化，见证每一点进步。通过数据了解孩子的发展状况，科学调整陪伴策略
-                            </p>
-                            <div class="space-y-3">
-                                <div class="flex justify-between items-center">
-                                    <span class="text-gray-700">语言表达</span>
-                                    <div class="flex items-center space-x-2">
-                                        <div class="w-24 bg-gray-200 rounded-full h-2">
-                                            <div class="bg-gradient-to-r from-pink-400 to-pink-500 h-2 rounded-full w-4/5"></div>
-                                        </div>
-                                        <span class="text-sm font-medium text-gray-600">80%</span>
-                                    </div>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-gray-700">精细动作</span>
-                                    <div class="flex items-center space-x-2">
-                                        <div class="w-24 bg-gray-200 rounded-full h-2">
-                                            <div class="bg-gradient-to-r from-blue-400 to-blue-500 h-2 rounded-full w-3/5"></div>
-                                        </div>
-                                        <span class="text-sm font-medium text-gray-600">65%</span>
-                                    </div>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-gray-700">社交情感</span>
-                                    <div class="flex items-center space-x-2">
-                                        <div class="w-24 bg-gray-200 rounded-full h-2">
-                                            <div class="bg-gradient-to-r from-green-400 to-green-500 h-2 rounded-full w-4/5"></div>
-                                        </div>
-                                        <span class="text-sm font-medium text-gray-600">75%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex justify-center">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop" 
-                                 alt="成长数据可视化" 
-                                 class="rounded-2xl soft-shadow">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 统计与社会证明 -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-                    值得信赖的选择
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    科学有效的早教方案，已经帮助众多家庭实现高质量陪伴
-                </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- 节省费用 -->
-                <div class="text-center">
-                    <div class="bg-gradient-to-r from-pink-100 to-pink-50 rounded-3xl p-8">
-                        <div class="text-5xl font-bold text-pink-500 mb-2">¥800+</div>
-                        <div class="text-lg font-medium text-gray-700 mb-2">平均每月节省</div>
-                        <div class="text-gray-600">早教机构费用</div>
-                    </div>
-                </div>
-
-                <!-- 连续陪伴 -->
-                <div class="text-center">
-                    <div class="bg-gradient-to-r from-blue-100 to-blue-50 rounded-3xl p-8">
-                        <div class="text-5xl font-bold text-blue-500 mb-2">100+</div>
-                        <div class="text-lg font-medium text-gray-700 mb-2">连续陪伴天数</div>
-                        <div class="text-gray-600">TOP用户记录</div>
-                    </div>
-                </div>
-
-                <!-- 家长好评 -->
-                <div class="text-center">
-                    <div class="bg-gradient-to-r from-green-100 to-green-50 rounded-3xl p-8">
-                        <div class="text-5xl font-bold text-green-500 mb-2">4.9</div>
-                        <div class="text-lg font-medium text-gray-700 mb-2">家长评分</div>
-                        <div class="text-gray-600 flex justify-center">
-                            <div class="flex space-x-1">
-                                <i class="fas fa-star text-yellow-400"></i>
-                                <i class="fas fa-star text-yellow-400"></i>
-                                <i class="fas fa-star text-yellow-400"></i>
-                                <i class="fas fa-star text-yellow-400"></i>
-                                <i class="fas fa-star text-yellow-400"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA 行动召唤 -->
-    <section class="py-24 gradient-bg">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
-                开始您的暖时光之旅
-            </h2>
-            <p class="text-xl text-white/90 mb-8 leading-relaxed">
-                App即将上线，现在关注可第一时间获得体验资格<br>
-                让科学的早教陪伴从今天开始
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1 class="hero-headline">A专业成长陪伴</h1>
+            <h2 class="hero-subheadline">为0-6岁孩子量身定制</h2>
+            <p class="hero-description">
+                每日个性化学习计划，专业指导，成长记录<br>
+                在家也能享受高质量亲子陪伴
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="btn-primary text-white px-8 py-4 rounded-2xl font-semibold text-lg">
-                    <i class="fas fa-bell mr-2"></i>
-                    关注上线动态
-                </button>
-                <button class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/30 transition-all">
-                    <i class="fas fa-download mr-2"></i>
-                    预约下载
-                </button>
+            <div class="hero-cta">
+                <a href="#" class="btn-primary">立即体验</a>
+                <a href="#" class="btn-secondary">了解更多</a>
+            </div>
+            <div class="hero-visual">
+                <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=600&h=400&fit=crop&crop=face"
+                     alt="温馨的亲子时光"
+                     class="hero-image">
             </div>
         </div>
     </section>
 
-    <!-- 页脚 -->
-    <footer class="bg-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="col-span-1 md:col-span-2">
-                    <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent mb-4">
-                        暖时光
-                    </h3>
-                    <p class="text-gray-600 mb-6 max-w-md">
-                        AI驱动的专业早教陪伴，给0-6岁孩子每日个性化学习计划与成长评估，让家长省心更安心。
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <div class="section-header">
+                <h2 class="section-title">为什么选择暖时光</h2>
+                <p class="section-subtitle">结合专家建议和专业陪伴理念，为每个孩子量身定制成长方案</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🧠</div>
+                    <h3 class="feature-title">个性化计划</h3>
+                    <p class="feature-description">
+                        基于年龄与历史记录，自动规划高质量活动，涵盖语言、体能、认知等全方位发展
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">
-                            <i class="fab fa-weixin text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">
-                            <i class="fab fa-weibo text-xl"></i>
-                        </a>
-                    </div>
                 </div>
-                <div>
-                    <h4 class="font-semibold text-gray-800 mb-4">产品</h4>
-                    <ul class="space-y-3">
-                        <li><a href="features.html" class="text-gray-600 hover:text-pink-500 transition-colors">功能特性</a></li>
-                        <li><a href="solutions.html" class="text-gray-600 hover:text-pink-500 transition-colors">解决方案</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-pink-500 transition-colors">价格方案</a></li>
-                    </ul>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">👨‍🏫</div>
+                    <h3 class="feature-title">专业指导</h3>
+                    <p class="feature-description">
+                        步骤清晰、家长指导完善，让每个家长都能轻松开展高质量的亲子活动
+                    </p>
                 </div>
-                <div>
-                    <h4 class="font-semibold text-gray-800 mb-4">支持</h4>
-                    <ul class="space-y-3">
-                        <li><a href="faq.html" class="text-gray-600 hover:text-pink-500 transition-colors">常见问题</a></li>
-                        <li><a href="about.html" class="text-gray-600 hover:text-pink-500 transition-colors">关于我们</a></li>
-                        <li><a href="privacy.html" class="text-gray-600 hover:text-pink-500 transition-colors">隐私政策</a></li>
-                    </ul>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">成长追踪</h3>
+                    <p class="feature-description">
+                        自动记录学习数据，生成成长报告与能力雷达，科学见证每一点进步
+                    </p>
                 </div>
             </div>
-            <div class="border-t border-gray-200 mt-12 pt-8 text-center">
-                <p class="text-gray-500">
-                    © 2025 暖时光. 保留所有权利。
-                </p>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section class="showcase">
+        <div class="showcase-container">
+            <div class="showcase-item fade-in">
+                <div class="showcase-content">
+                    <h3 class="showcase-title">今日学习计划</h3>
+                    <p class="showcase-description">
+                        孩子今天做什么，一目了然。预计时长与难度可控，让每一天的陪伴都有明确目标。
+                    </p>
+                    <ul class="showcase-features">
+                        <li>智能分析孩子发展阶段</li>
+                        <li>每日3-5个高质量活动</li>
+                        <li>涵盖8大发展维度</li>
+                        <li>时长难度精准预估</li>
+                    </ul>
+                </div>
+                <div class="showcase-visual">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&h=400&fit=crop"
+                         alt="学习计划界面"
+                         class="showcase-image">
+                </div>
             </div>
+
+            <div class="showcase-item fade-in">
+                <div class="showcase-content">
+                    <h3 class="showcase-title">专业活动指导</h3>
+                    <p class="showcase-description">
+                        所需材料与步骤清晰，家长轻松跟做。每个环节都有专业指导和安全提示。
+                    </p>
+                    <ul class="showcase-features">
+                        <li>详细的材料准备清单</li>
+                        <li>步骤分解清晰易懂</li>
+                        <li>专业的家长引导话术</li>
+                        <li>完善的安全注意事项</li>
+                    </ul>
+                </div>
+                <div class="showcase-visual">
+                    <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=500&h=400&fit=crop"
+                         alt="活动指导界面"
+                         class="showcase-image">
+                </div>
+            </div>
+
+            <div class="showcase-item fade-in">
+                <div class="showcase-content">
+                    <h3 class="showcase-title">成长数据可视化</h3>
+                    <p class="showcase-description">
+                        能力维度可视化，见证每一点进步。通过数据了解孩子发展状况，科学调整陪伴策略。
+                    </p>
+                    <ul class="showcase-features">
+                        <li>多维度能力评估</li>
+                        <li>直观的雷达图展示</li>
+                        <li>成长趋势分析</li>
+                        <li>个性化建议推荐</li>
+                    </ul>
+                </div>
+                <div class="showcase-visual">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=400&fit=crop"
+                         alt="成长报告界面"
+                         class="showcase-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="section-header">
+                <h2 class="section-title">值得信赖的选择</h2>
+                <p class="section-subtitle">科学有效的陪伴活动，已经帮助众多家庭实现高质量陪伴</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">服务家庭</div>
+                    <div class="stat-description">内测期间积累</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">¥800+</div>
+                    <div class="stat-label">平均月节省</div>
+                    <div class="stat-description">育儿机构费用</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">4.9</div>
+                    <div class="stat-label">用户评分</div>
+                    <div class="stat-description">家长满意度</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">连续使用天数</div>
+                    <div class="stat-description">TOP用户记录</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-container">
+            <h2 class="cta-title">开始您的暖时光之旅</h2>
+            <p class="cta-description">
+                App即将上线，现在关注可第一时间获得体验资格。<br>
+                让科学的成长陪伴从今天开始。
+            </p>
+            <div class="hero-cta">
+                <a href="#" class="btn-primary">关注上线动态</a>
+                <a href="#" class="btn-secondary">了解更多功能</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>产品</h4>
+                <ul>
+                    <li><a href="/features">功能特性</a></li>
+                    <li><a href="/solutions">解决方案</a></li>
+                    <li><a href="#">价格方案</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>支持</h4>
+                <ul>
+                    <li><a href="/faq">常见问题</a></li>
+                    <li><a href="/about">关于我们</a></li>
+                    <li><a href="/privacy">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">客服邮箱</a></li>
+                    <li><a href="#">商务合作</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>公司</h4>
+                <ul>
+                    <li><a href="#">新闻动态</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">投资者关系</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 暖时光. 保留所有权利。</p>
         </div>
     </footer>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with fade-in class
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
 </body>
 </html>
