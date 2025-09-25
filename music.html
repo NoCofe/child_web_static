@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐播放器 - 暖时光</title>
+    <meta name="description" content="暖时光音乐播放器，享受美妙的儿童歌曲和陪伴音乐。">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #007AFF;
+            --secondary-color: #5AC8FA;
+            --text-primary: #1D1D1F;
+            --text-secondary: #86868B;
+            --background: #FBFBFD;
+            --surface: #FFFFFF;
+            --border: #D2D2D7;
+            --success: #34C759;
+            --warning: #FF9500;
+            --player-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.47;
+            color: var(--text-primary);
+            background: var(--background);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(251, 251, 253, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 0.5px solid var(--border);
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 44px;
+        }
+
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .nav-cta {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding-top: 80px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 22px;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .page-title {
+            font-size: 48px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Music Player */
+        .music-player {
+            background: var(--player-bg);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .current-track {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .track-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .track-info {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        /* Audio Controls */
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .play-btn {
+            width: 70px;
+            height: 70px;
+            font-size: 30px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: white;
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        .time-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Volume Control */
+        .volume-control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .volume-icon {
+            font-size: 18px;
+        }
+
+        .volume-slider {
+            width: 120px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        /* Playlist */
+        .playlist {
+            background: var(--surface);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .playlist-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .playlist-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .playlist-count {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .track-list {
+            list-style: none;
+        }
+
+        .track-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .track-item:hover {
+            background: var(--background);
+            border-color: var(--border);
+        }
+
+        .track-item.active {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .track-number {
+            width: 40px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .track-item.active .track-number {
+            color: white;
+        }
+
+        .track-details {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .track-name {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .track-meta {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .track-duration {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .track-item.active .track-duration {
+            color: white;
+        }
+
+        /* Icons */
+        .icon {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+
+            .page-title {
+                font-size: 32px;
+            }
+
+            .music-player {
+                padding: 25px;
+            }
+
+            .track-title {
+                font-size: 20px;
+            }
+
+            .playlist {
+                padding: 20px;
+            }
+
+            .playlist-title {
+                font-size: 24px;
+            }
+
+            .track-item {
+                padding: 12px 15px;
+            }
+
+            .volume-control {
+                display: none;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Visualizer */
+        .visualizer {
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            gap: 3px;
+            height: 40px;
+            margin: 20px 0;
+        }
+
+        .bar {
+            width: 4px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 2px;
+            animation: wave 1s ease-in-out infinite;
+        }
+
+        .bar:nth-child(2) { animation-delay: 0.1s; }
+        .bar:nth-child(3) { animation-delay: 0.2s; }
+        .bar:nth-child(4) { animation-delay: 0.3s; }
+        .bar:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes wave {
+            0%, 100% { height: 10px; }
+            50% { height: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">暖时光</a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">首页</a></li>
+                <li><a href="/features" class="nav-link">功能</a></li>
+                <li><a href="/solutions" class="nav-link">解决方案</a></li>
+                <li><a href="/about" class="nav-link">关于我们</a></li>
+            </ul>
+            <a href="#" class="nav-cta">关注上线</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="page-title">🎵 音乐播放器</h1>
+                <p class="page-subtitle">享受美妙的儿童歌曲，让音乐陪伴孩子快乐成长</p>
+            </div>
+
+            <!-- Music Player -->
+            <div class="music-player">
+                <div class="current-track">
+                    <div class="track-title" id="currentTitle">选择一首歌曲开始播放</div>
+                    <div class="track-info" id="currentInfo">准备好了吗？</div>
+                </div>
+
+                <!-- Visualizer -->
+                <div class="visualizer" id="visualizer" style="display: none;">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+
+                <!-- Audio Controls -->
+                <div class="audio-controls">
+                    <button class="control-btn" id="prevBtn">
+                        <span>⏮</span>
+                    </button>
+                    <button class="control-btn play-btn" id="playBtn">
+                        <span id="playIcon">▶</span>
+                    </button>
+                    <button class="control-btn" id="nextBtn">
+                        <span>⏭</span>
+                    </button>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="time-info">
+                        <span id="currentTime">0:00</span>
+                        <span id="totalTime">0:00</span>
+                    </div>
+                </div>
+
+                <!-- Volume Control -->
+                <div class="volume-control">
+                    <span class="volume-icon">🔊</span>
+                    <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70">
+                    <span id="volumeValue">70%</span>
+                </div>
+            </div>
+
+            <!-- Playlist -->
+            <div class="playlist">
+                <div class="playlist-header">
+                    <h2 class="playlist-title">播放列表</h2>
+                    <span class="playlist-count" id="playlistCount">11 首歌曲</span>
+                </div>
+                <ul class="track-list" id="trackList">
+                    <!-- 动态生成 -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Audio Element -->
+    <audio id="audioPlayer" preload="metadata"></audio>
+
+    <script>
+        class MusicPlayer {
+            constructor() {
+                this.audio = document.getElementById('audioPlayer');
+                this.currentTrackIndex = 0;
+                this.isPlaying = false;
+                this.isLoading = false;
+
+                // 音乐列表
+                this.tracks = [
+                    { file: 'A_wolf_is_coming.mp3', title: 'A Wolf Is Coming', artist: '英语儿歌' },
+                    { file: 'ABC_phonics_song.mp3', title: 'ABC Phonics Song', artist: '字母歌' },
+                    { file: 'Can_you_see_it.mp3', title: 'Can You See It', artist: '英语儿歌' },
+                    { file: 'Fire.mp3', title: 'Fire', artist: '音乐' },
+                    { file: 'How_many_pigs_can_you_see.mp3', title: 'How Many Pigs Can You See', artist: '数数歌' },
+                    { file: 'It_a_real_flower.mp3', title: 'It\'s A Real Flower', artist: '英语儿歌' },
+                    { file: 'We_All_Fall_Down.mp3', title: 'We All Fall Down', artist: '英语儿歌' },
+                    { file: 'What_are_they_doing.mp3', title: 'What Are They Doing', artist: '英语儿歌' },
+                    { file: 'What_are_you_going.mp3', title: 'What Are You Going', artist: '英语儿歌' },
+                    { file: 'what_is_your_name.mp3', title: 'What Is Your Name', artist: '英语儿歌' },
+                    { file: 'Where_is_the_bear.mp3', title: 'Where Is The Bear', artist: '英语儿歌' }
+                ];
+
+                this.initializeElements();
+                this.bindEvents();
+                this.renderPlaylist();
+                this.updatePlaylistCount();
+            }
+
+            initializeElements() {
+                this.playBtn = document.getElementById('playBtn');
+                this.playIcon = document.getElementById('playIcon');
+                this.prevBtn = document.getElementById('prevBtn');
+                this.nextBtn = document.getElementById('nextBtn');
+                this.progressBar = document.getElementById('progressBar');
+                this.progressFill = document.getElementById('progressFill');
+                this.currentTime = document.getElementById('currentTime');
+                this.totalTime = document.getElementById('totalTime');
+                this.volumeSlider = document.getElementById('volumeSlider');
+                this.volumeValue = document.getElementById('volumeValue');
+                this.currentTitle = document.getElementById('currentTitle');
+                this.currentInfo = document.getElementById('currentInfo');
+                this.trackList = document.getElementById('trackList');
+                this.visualizer = document.getElementById('visualizer');
+            }
+
+            bindEvents() {
+                // 播放控制
+                this.playBtn.addEventListener('click', () => this.togglePlay());
+                this.prevBtn.addEventListener('click', () => this.previousTrack());
+                this.nextBtn.addEventListener('click', () => this.nextTrack());
+
+                // 进度条
+                this.progressBar.addEventListener('click', (e) => this.seekTo(e));
+
+                // 音量控制
+                this.volumeSlider.addEventListener('input', () => this.updateVolume());
+
+                // 音频事件
+                this.audio.addEventListener('loadstart', () => this.onLoadStart());
+                this.audio.addEventListener('canplay', () => this.onCanPlay());
+                this.audio.addEventListener('timeupdate', () => this.updateProgress());
+                this.audio.addEventListener('ended', () => this.onTrackEnded());
+                this.audio.addEventListener('error', () => this.onError());
+
+                // 初始音量
+                this.audio.volume = 0.7;
+            }
+
+            renderPlaylist() {
+                this.trackList.innerHTML = '';
+                this.tracks.forEach((track, index) => {
+                    const li = document.createElement('li');
+                    li.className = 'track-item';
+                    li.innerHTML = `
+                        <div class="track-number">${(index + 1).toString().padStart(2, '0')}</div>
+                        <div class="track-details">
+                            <div class="track-name">${track.title}</div>
+                            <div class="track-meta">${track.artist}</div>
+                        </div>
+                        <div class="track-duration">--:--</div>
+                    `;
+                    li.addEventListener('click', () => this.selectTrack(index));
+                    this.trackList.appendChild(li);
+                });
+            }
+
+            selectTrack(index) {
+                this.currentTrackIndex = index;
+                this.loadCurrentTrack();
+                this.updateActiveTrack();
+            }
+
+            loadCurrentTrack() {
+                const track = this.tracks[this.currentTrackIndex];
+                this.audio.src = `music/${track.file}`;
+                this.currentTitle.textContent = track.title;
+                this.currentInfo.textContent = track.artist;
+                this.audio.load();
+            }
+
+            togglePlay() {
+                if (this.isLoading) return;
+
+                if (!this.audio.src) {
+                    this.selectTrack(0);
+                    return;
+                }
+
+                if (this.isPlaying) {
+                    this.pause();
+                } else {
+                    this.play();
+                }
+            }
+
+            play() {
+                this.audio.play().then(() => {
+                    this.isPlaying = true;
+                    this.playIcon.textContent = '⏸';
+                    this.visualizer.style.display = 'flex';
+                }).catch(error => {
+                    console.error('播放失败:', error);
+                    this.onError();
+                });
+            }
+
+            pause() {
+                this.audio.pause();
+                this.isPlaying = false;
+                this.playIcon.textContent = '▶';
+                this.visualizer.style.display = 'none';
+            }
+
+            previousTrack() {
+                this.currentTrackIndex = this.currentTrackIndex > 0
+                    ? this.currentTrackIndex - 1
+                    : this.tracks.length - 1;
+                this.selectTrack(this.currentTrackIndex);
+                if (this.isPlaying) {
+                    setTimeout(() => this.play(), 100);
+                }
+            }
+
+            nextTrack() {
+                this.currentTrackIndex = this.currentTrackIndex < this.tracks.length - 1
+                    ? this.currentTrackIndex + 1
+                    : 0;
+                this.selectTrack(this.currentTrackIndex);
+                if (this.isPlaying) {
+                    setTimeout(() => this.play(), 100);
+                }
+            }
+
+            updateProgress() {
+                if (this.audio.duration) {
+                    const progress = (this.audio.currentTime / this.audio.duration) * 100;
+                    this.progressFill.style.width = `${progress}%`;
+                    this.currentTime.textContent = this.formatTime(this.audio.currentTime);
+                    this.totalTime.textContent = this.formatTime(this.audio.duration);
+                }
+            }
+
+            seekTo(e) {
+                if (this.audio.duration) {
+                    const rect = this.progressBar.getBoundingClientRect();
+                    const progress = (e.clientX - rect.left) / rect.width;
+                    this.audio.currentTime = progress * this.audio.duration;
+                }
+            }
+
+            updateVolume() {
+                const volume = this.volumeSlider.value / 100;
+                this.audio.volume = volume;
+                this.volumeValue.textContent = `${this.volumeSlider.value}%`;
+            }
+
+            updateActiveTrack() {
+                document.querySelectorAll('.track-item').forEach((item, index) => {
+                    item.classList.toggle('active', index === this.currentTrackIndex);
+                });
+            }
+
+            updatePlaylistCount() {
+                document.getElementById('playlistCount').textContent = `${this.tracks.length} 首歌曲`;
+            }
+
+            formatTime(seconds) {
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins}:${secs.toString().padStart(2, '0')}`;
+            }
+
+            onLoadStart() {
+                this.isLoading = true;
+                this.playIcon.innerHTML = '<div class="loading"></div>';
+            }
+
+            onCanPlay() {
+                this.isLoading = false;
+                this.playIcon.textContent = this.isPlaying ? '⏸' : '▶';
+            }
+
+            onTrackEnded() {
+                this.nextTrack();
+            }
+
+            onError() {
+                this.isLoading = false;
+                this.isPlaying = false;
+                this.playIcon.textContent = '▶';
+                this.visualizer.style.display = 'none';
+                this.currentTitle.textContent = '播放出错';
+                this.currentInfo.textContent = '请检查音频文件';
+                console.error('音频加载或播放出错');
+            }
+        }
+
+        // 初始化播放器
+        document.addEventListener('DOMContentLoaded', () => {
+            new MusicPlayer();
+        });
+    </script>
+</body>
+</html>
