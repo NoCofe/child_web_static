@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品功能 - 暖时光成长陪伴助手</title>
+    <meta name="description" content="暖时光四大核心功能：每日学习计划、学习活动详情、成长报告评估、家长引导系统，全方位支持0-6岁儿童成长陪伴。">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #007AFF;
+            --secondary-color: #5AC8FA;
+            --text-primary: #1D1D1F;
+            --text-secondary: #86868B;
+            --background: #FBFBFD;
+            --surface: #FFFFFF;
+            --border: #D2D2D7;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.47;
+            color: var(--text-primary);
+            background: var(--background);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(251, 251, 253, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 0.5px solid var(--border);
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 44px;
+        }
+
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .nav-cta {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 22px 60px;
+            text-align: center;
+            background: var(--surface);
+        }
+
+        .hero-container {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .hero-headline {
+            font-size: 56px;
+            font-weight: 600;
+            line-height: 1.07;
+            letter-spacing: -0.005em;
+            margin-bottom: 18px;
+            color: var(--text-primary);
+        }
+
+        .hero-subheadline {
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 1.14;
+            letter-spacing: 0.007em;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        /* Features Grid */
+        .features {
+            padding: 80px 22px;
+            background: var(--background);
+        }
+
+        .features-container {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 24px;
+        }
+
+        .feature-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .feature-description {
+            font-size: 17px;
+            line-height: 1.47;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .feature-points {
+            list-style: none;
+        }
+
+        .feature-points li {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .feature-points li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 80px 22px;
+            background: var(--surface);
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 1.1;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            font-size: 19px;
+            line-height: 1.42;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 22px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            padding: 12px 24px;
+            border: 1px solid var(--primary-color);
+            border-radius: 22px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--background);
+            padding: 40px 22px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+            display: none;
+            }
+
+            .hero-headline {
+                font-size: 36px;
+            }
+
+            .hero-subheadline {
+                font-size: 21px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-title {
+                font-size: 24px;
+            }
+
+            .cta-title {
+                font-size: 28px;
+            }
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">暖时光</a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">首页</a></li>
+                <li><a href="/features" class="nav-link active">功能</a></li>
+                <li><a href="/solutions" class="nav-link">解决方案</a></li>
+                <li><a href="/about" class="nav-link">关于我们</a></li>
+                
+            </ul>
+            <a href="#" class="nav-cta">关注上线</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1 class="hero-headline">强大功能</h1>
+            <p class="hero-subheadline">让成长陪伴更简单更专业</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📅</div>
+                    <h3 class="feature-title">每日学习计划</h3>
+                    <p class="feature-description">
+                            AI智能分析孩子的年龄阶段和历史学习数据，每天自动生成3-5个高质量活动，涵盖语言、音乐、精细动作、体能、认知、艺术、社交、情感八大发展维度。
+                        </p>
+                    <ul class="feature-points">
+                        <li>基于孩子发展规律和个人特点智能推荐</li>
+                        <li>每个活动标注预计时长和难度等级</li>
+                        <li>覆盖八大关键发展维度</li>
+                        <li>学习目标明确，效果可预期</li>
+                    </ul>
+                            </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📋</div>
+                    <h3 class="feature-title">学习活动详情</h3>
+                    <p class="feature-description">
+                            每个活动都提供详细的执行指南，包括所需材料、步骤说明、家长指导要点和安全提示，确保家长能够轻松有效地引导孩子完成学习。
+                        </p>
+                    <ul class="feature-points">
+                        <li>详细的材料准备清单</li>
+                        <li>步骤分解清晰易懂</li>
+                        <li>专业的家长引导话术</li>
+                        <li>完善的安全注意事项</li>
+                    </ul>
+            </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">成长报告评估</h3>
+                    <p class="feature-description">
+                            基于孩子的学习数据，自动生成详细的成长报告和能力雷达图，让家长直观了解孩子各个发展维度的进展情况，科学调整陪伴策略。
+                        </p>
+                    <ul class="feature-points">
+                        <li>涵盖语言、体能、认知、社交等8大发展维度</li>
+                        <li>直观的雷达图和趋势分析</li>
+                        <li>记录学习里程碑和重要成就</li>
+                        <li>提供同龄儿童发展参考对比</li>
+                                </ul>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">👨‍🏫</div>
+                    <h3 class="feature-title">家长引导系统</h3>
+                    <p class="feature-description">
+                            在活动过程中提供实时的家长指导卡片，包含引导话术、鼓励方式和注意事项。活动结束后可填写反馈，帮助系统持续优化推荐内容。
+                        </p>
+                    <ul class="feature-points">
+                        <li>提供科学的引导话术和鼓励方式</li>
+                        <li>实时的安全提示和注意事项</li>
+                        <li>收集活动反馈，持续优化算法</li>
+                        <li>自动记录孩子的成长轨迹</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-container">
+            <h2 class="cta-title">体验强大功能</h2>
+            <p class="cta-description">
+                从智能规划到成长追踪，让每一天的陪伴都充满意义。<br>
+                现在关注，第一时间体验完整功能。
+            </p>
+            <div>
+                <a href="#" class="btn-primary">关注上线动态</a>
+                <a href="/" class="btn-secondary">返回首页</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>产品</h4>
+                <ul>
+                    <li><a href="/features">功能特性</a></li>
+                    <li><a href="/solutions">解决方案</a></li>
+                    <li><a href="/music">音乐</a></li>
+                    </ul>
+                </div>
+            <div class="footer-section">
+                <h4>支持</h4>
+                <ul>
+                    <li><a href="/faq">常见问题</a></li>
+                    <li><a href="/about">关于我们</a></li>
+                
+                    <li><a href="/privacy">隐私政策</a></li>
+                    </ul>
+                </div>
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">客服邮箱</a></li>
+                    <li><a href="#">商务合作</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>公司</h4>
+                <ul>
+                    <li><a href="#">新闻动态</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">投资者关系</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 暖时光. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with fade-in class
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

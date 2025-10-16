@@ -1,0 +1,15 @@
+# 重定向带 .html 扩展名的 URL 到无扩展名版本
+/features.html  /features  301!
+/solutions.html /solutions 301!
+/about.html     /about     301!
+/faq.html       /faq       301!
+/privacy.html   /privacy   301!
+/music.html     /music     301!
+
+# 处理无扩展名的 URL
+/features  /features.html  200
+/solutions /solutions.html 200
+/about     /about.html     200
+/faq       /faq.html       200
+/privacy   /privacy.html   200
+/music     /music.html     200

@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# 主站sitemap
+Sitemap: http://www.lumij.top/sitemap.xml
+Sitemap: https://www.lumij.top/sitemap.xml
+
+# 备用sitemap（托管在Gitee）
+Sitemap: https://你的用户名.gitee.io/你的仓库名/sitemap.xml
+Sitemap: https://你的用户名.gitee.io/你的仓库名/360sitemap.xml

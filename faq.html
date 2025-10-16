@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常见问题 - 暖时光成长陪伴助手</title>
+    <meta name="description" content="暖时光常见问题解答：了解产品功能、使用方法、隐私保护、支持平台等详细信息，解决您的疑虑。">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #FFB6C1 0%, #FF7F7F 25%, #87CEEB  75%, #98FB98 100%);
+        }
+        .soft-shadow {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #FF7F7F, #FFB6C1);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #FF6B6B, #FFA0A0);
+            transform: translateY(-2px);
+        }
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            opacity: 1;
+            padding-top: 1rem;
+        }
+        .faq-answer {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            padding-top: 0;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        .search-highlight {
+            background-color: #fef3c7;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- 导航栏 -->
+    <nav class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 soft-shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="/" class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent">
+                            暖时光
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="/" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">首页</a>
+                        <a href="/features" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">功能</a>
+                        <a href="/solutions" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">解决方案</a>
+                        <a href="#" class="text-gray-800 hover:text-pink-500 font-medium transition-colors">常见问题</a>
+                        <a href="/about" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">关于我们</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <button class="btn-primary text-white px-6 py-3 rounded-2xl font-semibold">
+                        关注上线
+                    </button>
+                </div>
+                <!-- 移动端菜单按钮 -->
+                <div class="md:hidden">
+                    <button class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面头部 -->
+    <section class="gradient-bg py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl lg:text-6xl font-bold text-white mb-6">
+                常见问题
+                <span class="block text-4xl lg:text-5xl mt-2">解答您的疑虑</span>
+            </h1>
+            <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
+                我们整理了用户最关心的问题，帮助您更好地了解暖时光
+            </p>
+
+            <!-- 搜索框 -->
+            <div class="max-w-2xl mx-auto">
+                <div class="relative">
+                    <input type="text"
+                           id="searchInput"
+                           placeholder="搜索问题..."
+                           class="w-full px-6 py-4 pl-14 rounded-2xl text-gray-800 text-lg focus:outline-none focus:ring-4 focus:ring-white/30 transition-all">
+                    <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+                        <i class="fas fa-search text-gray-400 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ分类导航 -->
+    <section class="py-12 bg-white sticky top-20 z-40 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="category-btn active bg-gradient-to-r from-pink-400 to-pink-500 text-white px-6 py-3 rounded-2xl font-semibold transition-all" data-category="all">
+                    <i class="fas fa-list mr-2"></i>
+                    全部问题
+                </button>
+                <button class="category-btn bg-gray-100 text-gray-600 hover:bg-gray-200 px-6 py-3 rounded-2xl font-semibold transition-all" data-category="product">
+                    <i class="fas fa-box mr-2"></i>
+                    产品功能
+                </button>
+                <button class="category-btn bg-gray-100 text-gray-600 hover:bg-gray-200 px-6 py-3 rounded-2xl font-semibold transition-all" data-category="usage">
+                    <i class="fas fa-play mr-2"></i>
+                    使用指南
+                </button>
+                <button class="category-btn bg-gray-100 text-gray-600 hover:bg-gray-200 px-6 py-3 rounded-2xl font-semibold transition-all" data-category="privacy">
+                    <i class="fas fa-shield-alt mr-2"></i>
+                    隐私安全
+                </button>
+                <button class="category-btn bg-gray-100 text-gray-600 hover:bg-gray-200 px-6 py-3 rounded-2xl font-semibold transition-all" data-category="technical">
+                    <i class="fas fa-cog mr-2"></i>
+                    技术支持
+                </button>
+                <button class="category-btn bg-gray-100 text-gray-600 hover:bg-gray-200 px-6 py-3 rounded-2xl font-semibold transition-all" data-category="music">
+                    <i class="fas fa-music mr-2"></i>
+                    音乐
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ内容 -->
+    <section class="py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="faqContainer" class="space-y-6">
+
+                <!-- 产品功能类 -->
+                <div class="faq-item bg-white rounded-2xl p-6 soft-shadow card-hover" data-category="product">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-gray-800 pr-4">暖时光适合什么年龄段的孩子？</h3>
+                        <div class="faq-icon bg-pink-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-plus text-pink-500"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer text-gray-600 leading-relaxed">
+                        暖时光专门为0-6岁（新生儿至学龄前）的孩子设计。我们的AI算法会根据孩子的具体年龄阶段（精确到月份）生成相应的学习计划，确保活动内容符合孩子的发展特点和能力水平。每个年龄段都有专门的发展目标和活动设计。
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl p-6 soft-shadow card-hover" data-category="product">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-gray-800 pr-4">每天的学习计划包含哪些内容？</h3>
+                        <div class="faq-icon bg-pink-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-plus text-pink-500"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer text-gray-600 leading-relaxed">
+                        每日学习计划通常包含3-5个活动，涵盖八大发展维度：语言表达、音乐律动、精细动作、体能运动、认知发展、艺术创作、社交情感、生活技能。每个活动都有明确的目标、所需材料、详细步骤、预计时长（5-30分钟）和家长指导要点。
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl p-6 soft-shadow card-hover" data-category="product">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-gray-800 pr-4">AI是如何个性化推荐内容的？</h3>
+                        <div class="faq-icon bg-pink-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-plus text-pink-500"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer text-gray-600 leading-relaxed">
+                        我们的AI算法综合考虑多个因素：孩子的年龄和发展阶段、历史学习记录和完成情况、家长反馈、兴趣偏好等。系统会持续学习和优化，确保推荐的活动既符合发展规律，又贴合孩子的个性特点，实现真正的因材施教。
+                    </div>
+                </div>
+
+                <!-- 使用指南类 -->
+                <div class="faq-item bg-white rounded-2xl p-6 soft-shadow card-hover" data-category="usage">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-gray-800 pr-4">如果孩子不配合或中途不想做了怎么办？</h3>
+                        <div class="faq-icon bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-plus text-blue-500"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer text-gray-600 leading-relaxed">
+                        这是很正常的情况！我们提供了多种应对策略：1）每个活动都有引导技巧和话术建议；2）可以暂停活动，稍后继续；3）提供简化版本或替代活动；4）系统会根据孩子的参与度调整后续推荐。记住，陪伴的质量比完成度更重要。
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl p-6 soft-shadow card-hover" data-category="usage">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-gray-800 pr-4">需要准备很多特殊材料吗？</h3>
+                        <div class="faq-icon bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-plus text-blue-500"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer text-gray-600 leading-relaxed">
+                        不需要！我们的活动设计优先使用家庭常见物品，如积木、彩笔、纸张、水果、毛巾等。偶尔需要的特殊材料也会提前通知，并提供替代方案。我们的理念是让亲子陪伴变得简单可行，而不是增加家庭负担。
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl p-6 soft-shadow card-hover" data-category="usage">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-gray-800 pr-4">每天必须完成所有活动吗？</h3>
+                        <div class="faq-icon bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-plus text-blue-500"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer text-gray-600 leading-relaxed">
+                        完全不必要！学习计划是建议性的，您可以根据当天的时间和孩子的状态灵活选择。完成1-2个活动也是很好的。重要的是保持规律性和互动质量。系统会记录您的使用习惯，逐步推荐更适合的活动数量和类型。
+                    </div>
+                </div>
+
+                <!-- 隐私安全类 -->
+                <div class="faq-item bg-white rounded-2xl p-6 soft-shadow card-hover" data-category="privacy">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-gray-800 pr-4">会收集孩子的哪些信息？</h3>
+                        <div class="faq-icon bg-green-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-plus text-green-500"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer text-gray-600 leading-relaxed">
+                        我们严格遵循最小必要原则，只收集用于改善服务的基本信息：孩子的年龄（精确到月）、活动完成情况、家长反馈。我们不收集照片、视频、姓名等敏感信息。所有数据都经过加密处理，仅用于个性化推荐和产品优化。
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl p-6 soft-shadow card-hover" data-category="privacy">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-gray-800 pr-4">数据安全如何保障？</h3>
+                        <div class="faq-icon bg-green-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-plus text-green-500"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer text-gray-600 leading-relaxed">
+                        我们采用银行级别的安全标准：数据传输使用SSL加密、服务器采用多重防护、定期安全审计、数据备份和灾难恢复机制。用户数据存储在国内合规的云服务商，符合相关法律法规要求。您有权随时查看、修改或删除个人数据。
+                    </div>
+                </div>
+
+                <!-- 技术支持类 -->
+                <div class="faq-item bg-white rounded-2xl p-6 soft-shadow card-hover" data-category="technical">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-gray-800 pr-4">支持哪些设备和操作系统？</h3>
+                        <div class="faq-icon bg-purple-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-plus text-purple-500"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer text-gray-600 leading-relaxed">
+                        暖时光采用Flutter技术开发，支持iOS 12.0+和Android 8.0+系统。同时提供网页版供成长报告查看。我们建议使用较新的设备以获得最佳体验，但也会持续优化兼容性，确保更多家庭能够使用。
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl p-6 soft-shadow card-hover" data-category="technical">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-gray-800 pr-4">需要一直联网使用吗？</h3>
+                        <div class="faq-icon bg-purple-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-plus text-purple-500"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer text-gray-600 leading-relaxed">
+                        日常使用可以离线进行！学习计划会提前下载到本地，活动过程中的记录也会暂存在设备上。只有在生成新计划、上传学习数据、查看成长报告时才需要联网。这样设计既保证了使用流畅性，又减少了对网络的依赖。
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl p-6 soft-shadow card-hover" data-category="technical">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-gray-800 pr-4">遇到技术问题如何获得帮助？</h3>
+                        <div class="faq-icon bg-purple-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-plus text-purple-500"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer text-gray-600 leading-relaxed">
+                        我们提供多种支持渠道：1）App内置帮助中心和问题反馈功能；2）官方微信客服（工作日9:00-18:00响应）；3）用户QQ群和微信群；4）官网在线客服。我们承诺技术问题24小时内响应，重要问题会优先处理。
+                    </div>
+                </div>
+
+                <!-- 音乐类 -->
+                <div class="faq-item bg-white rounded-2xl p-6 soft-shadow card-hover" data-category="music">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-gray-800 pr-4">暖时光是免费的吗？</h3>
+                        <div class="faq-icon bg-orange-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-plus text-orange-500"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer text-gray-600 leading-relaxed">
+                        我们提供基础功能免费试用，让您先体验产品价值。完整功能需要订阅专业版，月费99元，年费1188元（相当于月费99元）。相比传统育儿机构动辄数千元的费用，我们的定价非常亲民，让更多家庭能够负担得起专业陪伴。
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl p-6 soft-shadow card-hover" data-category="music">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-gray-800 pr-4">可以退款吗？</h3>
+                        <div class="faq-icon bg-orange-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-plus text-orange-500"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer text-gray-600 leading-relaxed">
+                        我们提供7天无理由退款政策。如果您在购买后7天内对产品不满意，可以申请全额退款。我们希望每位用户都能满意地使用我们的服务，因此也会根据具体情况考虑特殊退款申请。
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl p-6 soft-shadow card-hover" data-category="music">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-gray-800 pr-4">有家庭套餐或多孩优惠吗？</h3>
+                        <div class="faq-icon bg-orange-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-plus text-orange-500"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer text-gray-600 leading-relaxed">
+                        是的！我们理解二胎、三胎家庭的经济压力。家庭套餐支持最多3个孩子使用，第二个孩子享受5折优惠，第三个孩子免费。这样的设计让多孩家庭也能轻松享受专业陪伴服务，真正实现育儿普惠化。
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 搜索无结果提示 -->
+            <div id="noResults" class="hidden text-center py-16">
+                <div class="text-6xl text-gray-300 mb-4">🔍</div>
+                <h3 class="text-2xl font-bold text-gray-700 mb-4">没有找到相关问题</h3>
+                <p class="text-gray-600 mb-6">试试其他关键词，或者联系我们获得帮助</p>
+                <button class="btn-primary text-white px-6 py-3 rounded-2xl font-semibold">
+                    联系客服
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们区域 -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                    还有其他问题？
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    我们的团队随时为您提供帮助
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 微信客服 -->
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 text-center card-hover">
+                    <div class="bg-gradient-to-r from-green-400 to-green-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fab fa-weixin text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">微信客服</h3>
+                    <p class="text-gray-600 mb-6">扫码添加客服微信<br>工作日 9:00-18:00</p>
+                    <button class="bg-green-500 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-green-600 transition-colors">
+                        添加客服
+                    </button>
+                </div>
+
+                <!-- 用户群 -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8 text-center card-hover">
+                    <div class="bg-gradient-to-r from-blue-400 to-blue-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">用户交流群</h3>
+                    <p class="text-gray-600 mb-6">与其他家长交流经验<br>分享育儿心得</p>
+                    <button class="bg-blue-500 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-blue-600 transition-colors">
+                        加入群聊
+                    </button>
+                </div>
+
+                <!-- 邮件反馈 -->
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl p-8 text-center card-hover">
+                    <div class="bg-gradient-to-r from-purple-400 to-purple-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-envelope text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">邮件反馈</h3>
+                    <p class="text-gray-600 mb-6">发送详细问题描述<br>24小时内回复</p>
+                    <button class="bg-purple-500 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-purple-600 transition-colors">
+                        发送邮件
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA 区域 -->
+    <section class="py-24 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                准备好开始了吗？
+            </h2>
+            <p class="text-xl text-white/90 mb-8 leading-relaxed">
+                如果您还有疑问，欢迎随时联系我们<br>
+                如果已经了解清楚，那就关注产品上线动态吧
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary text-white px-8 py-4 rounded-2xl font-semibold text-lg">
+                    <i class="fas fa-bell mr-2"></i>
+                    关注上线动态
+                </button>
+                <button class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/30 transition-all">
+                    <i class="fas fa-home mr-2"></i>
+                    返回首页
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent mb-4">
+                        暖时光
+                    </h3>
+                    <p class="text-gray-600 mb-6 max-w-md">
+                        AI驱动的专业成长陪伴，给0-6岁孩子每日个性化学习计划与成长评估，让家长省心更安心。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">
+                            <i class="fab fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">
+                            <i class="fab fa-weibo text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-4">产品</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/features" class="text-gray-600 hover:text-pink-500 transition-colors">功能特性</a></li>
+                        <li><a href="/solutions" class="text-gray-600 hover:text-pink-500 transition-colors">解决方案</a></li>
+                        <li><a href="/music" class="text-gray-600 hover:text-pink-500 transition-colors">音乐</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-4">支持</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-600 hover:text-pink-500 transition-colors">常见问题</a></li>
+                        <li><a href="/about" class="text-gray-600 hover:text-pink-500 transition-colors">关于我们</a></li>
+
+                        <li><a href="/privacy" class="text-gray-600 hover:text-pink-500 transition-colors">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-12 pt-8 text-center">
+                <p class="text-gray-500">
+                    © 2025 暖时光. 保留所有权利。
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const searchInput = document.getElementById('searchInput');
+            const faqContainer = document.getElementById('faqContainer');
+            const noResults = document.getElementById('noResults');
+
+            // FAQ展开收起
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', function() {
+                    const isActive = item.classList.contains('active');
+
+                    // 收起所有其他项目
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+
+                    // 切换当前项目状态
+                    item.classList.toggle('active', !isActive);
+                });
+            });
+
+            // 分类筛选
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+
+                    // 更新按钮状态
+                    categoryBtns.forEach(b => {
+                        b.classList.remove('active', 'bg-gradient-to-r', 'from-pink-400', 'to-pink-500', 'text-white');
+                        b.classList.add('bg-gray-100', 'text-gray-600');
+                    });
+                    this.classList.add('active', 'bg-gradient-to-r', 'from-pink-400', 'to-pink-500', 'text-white');
+                    this.classList.remove('bg-gray-100', 'text-gray-600');
+
+                    // 筛选FAQ项目
+                    let visibleCount = 0;
+                    faqItems.forEach(item => {
+                        const itemCategory = item.getAttribute('data-category');
+                        if (category === 'all' || itemCategory === category) {
+                            item.style.display = 'block';
+                            visibleCount++;
+                        } else {
+                            item.style.display = 'none';
+                            item.classList.remove('active');
+                        }
+                    });
+
+                    // 显示/隐藏无结果提示
+                    if (visibleCount === 0) {
+                        noResults.classList.remove('hidden');
+                        faqContainer.classList.add('hidden');
+                    } else {
+                        noResults.classList.add('hidden');
+                        faqContainer.classList.remove('hidden');
+                    }
+
+                    // 清除搜索
+                    searchInput.value = '';
+                });
+            });
+
+            // 搜索功能
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+                let visibleCount = 0;
+
+                faqItems.forEach(item => {
+                    const question = item.querySelector('.faq-question h3').textContent.toLowerCase();
+                    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+
+                    if (searchTerm === '' || question.includes(searchTerm) || answer.includes(searchTerm)) {
+                        item.style.display = 'block';
+                        visibleCount++;
+
+                        // 高亮搜索结果
+                        if (searchTerm !== '') {
+                            highlightText(item, searchTerm);
+                        } else {
+                            removeHighlight(item);
+                        }
+                    } else {
+                        item.style.display = 'none';
+                        item.classList.remove('active');
+                    }
+                });
+
+                // 显示/隐藏无结果提示
+                if (visibleCount === 0 && searchTerm !== '') {
+                    noResults.classList.remove('hidden');
+                    faqContainer.classList.add('hidden');
+                } else {
+                    noResults.classList.add('hidden');
+                    faqContainer.classList.remove('hidden');
+                }
+
+                // 如果在搜索时，重置分类筛选
+                if (searchTerm !== '') {
+                    categoryBtns.forEach(btn => {
+                        btn.classList.remove('active', 'bg-gradient-to-r', 'from-pink-400', 'to-pink-500', 'text-white');
+                        btn.classList.add('bg-gray-100', 'text-gray-600');
+                    });
+                    categoryBtns[0].classList.add('active', 'bg-gradient-to-r', 'from-pink-400', 'to-pink-500', 'text-white');
+                    categoryBtns[0].classList.remove('bg-gray-100', 'text-gray-600');
+                }
+            });
+
+            // 高亮搜索关键词
+            function highlightText(item, searchTerm) {
+                const question = item.querySelector('.faq-question h3');
+                const answer = item.querySelector('.faq-answer');
+
+                [question, answer].forEach(element => {
+                    const originalText = element.textContent;
+                    const regex = new RegExp(`(${searchTerm})`, 'gi');
+                    const highlightedText = originalText.replace(regex, '<span class="search-highlight">$1</span>');
+                    element.innerHTML = highlightedText;
+                });
+            }
+
+            // 移除高亮
+            function removeHighlight(item) {
+                const question = item.querySelector('.faq-question h3');
+                const answer = item.querySelector('.faq-answer');
+
+                [question, answer].forEach(element => {
+                    const text = element.textContent;
+                    element.innerHTML = text;
+                });
+            }
+        });
+    </script>
+</body>
+</html>

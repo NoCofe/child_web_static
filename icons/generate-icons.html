@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>生成PWA图标</title>
+</head>
+<body>
+    <canvas id="canvas" width="512" height="512" style="border: 1px solid #ccc;"></canvas>
+    <br><br>
+    <button onclick="generateIcons()">生成所有尺寸图标</button>
+    <div id="downloads"></div>
+
+    <script>
+        function drawIcon(canvas, size) {
+            const ctx = canvas.getContext('2d');
+            canvas.width = size;
+            canvas.height = size;
+            
+            // 清除画布
+            ctx.clearRect(0, 0, size, size);
+            
+            // 创建渐变背景
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#FF9500');
+            gradient.addColorStop(0.5, '#FF6B35');
+            gradient.addColorStop(1, '#F7931E');
+            
+            // 绘制背景圆形
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size/2 - 20, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // 绘制太阳光芒
+            ctx.strokeStyle = '#FFF';
+            ctx.lineWidth = size/64;
+            ctx.lineCap = 'round';
+            
+            const center = size/2;
+            const rayLength = size/12;
+            const rayStart = size/2 - size/4;
+            
+            for(let i = 0; i < 8; i++) {
+                const angle = (i * Math.PI) / 4;
+                const startX = center + Math.cos(angle) * rayStart;
+                const startY = center + Math.sin(angle) * rayStart;
+                const endX = center + Math.cos(angle) * (rayStart + rayLength);
+                const endY = center + Math.sin(angle) * (rayStart + rayLength);
+                
+                ctx.beginPath();
+                ctx.moveTo(startX, startY);
+                ctx.lineTo(endX, endY);
+                ctx.stroke();
+            }
+            
+            // 绘制中心太阳
+            ctx.fillStyle = '#FFF';
+            ctx.beginPath();
+            ctx.arc(center, center, size/6, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // 绘制笑脸
+            ctx.fillStyle = '#FF6B35';
+            // 左眼
+            ctx.beginPath();
+            ctx.arc(center - size/20, center - size/20, size/64, 0, 2 * Math.PI);
+            ctx.fill();
+            // 右眼
+            ctx.beginPath();
+            ctx.arc(center + size/20, center - size/20, size/64, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // 嘴巴
+            ctx.strokeStyle = '#FF6B35';
+            ctx.lineWidth = size/85;
+            ctx.beginPath();
+            ctx.arc(center, center + size/40, size/25, 0, Math.PI);
+            ctx.stroke();
+            
+            // 添加"暖"字
+            ctx.fillStyle = '#FFF';
+            ctx.font = `bold ${size/14}px Arial, "Microsoft YaHei", sans-serif`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('暖', center, center + size/4);
+        }
+        
+        function generateIcons() {
+            const sizes = [72, 96, 128, 144, 152, 192, 384, 512];
+            const canvas = document.getElementById('canvas');
+            const downloads = document.getElementById('downloads');
+            downloads.innerHTML = '';
+            
+            sizes.forEach(size => {
+                drawIcon(canvas, size);
+                
+                canvas.toBlob(function(blob) {
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `icon-${size}x${size}.png`;
+                    a.textContent = `下载 ${size}x${size} 图标`;
+                    a.style.display = 'block';
+                    a.style.margin = '5px 0';
+                    downloads.appendChild(a);
+                });
+            });
+        }
+        
+        // 初始绘制
+        drawIcon(document.getElementById('canvas'), 512);
+    </script>
+</body>
+</html>

@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - 暖时光成长陪伴助手</title>
+    <meta name="description" content="了解暖时光的品牌故事、团队愿景和产品理念。我们致力于让每个家庭都能享受高质量的成长陪伴服务。">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #007AFF;
+            --secondary-color: #5AC8FA;
+            --text-primary: #1D1D1F;
+            --text-secondary: #86868B;
+            --background: #FBFBFD;
+            --surface: #FFFFFF;
+            --border: #D2D2D7;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.47;
+            color: var(--text-primary);
+            background: var(--background);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(251, 251, 253, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 0.5px solid var(--border);
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 44px;
+        }
+
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .nav-cta {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 22px 80px;
+            text-align: center;
+            background: var(--surface);
+        }
+
+        .hero-container {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .hero-headline {
+            font-size: 56px;
+            font-weight: 600;
+            line-height: 1.07;
+            letter-spacing: -0.005em;
+            margin-bottom: 18px;
+            color: var(--text-primary);
+        }
+
+        .hero-subheadline {
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 1.14;
+            letter-spacing: 0.007em;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        /* Story Section */
+        .story {
+            padding: 80px 22px;
+            background: var(--background);
+        }
+
+        .story-container {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .story-title {
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 1.1;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+        }
+
+        .story-text {
+            font-size: 19px;
+            line-height: 1.42;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .story-quote {
+            font-size: 21px;
+            font-weight: 500;
+            color: var(--primary-color);
+            font-style: italic;
+            margin-top: 30px;
+        }
+
+        .story-image {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Values Section */
+        .values {
+            padding: 80px 22px;
+            background: var(--surface);
+        }
+
+        .values-container {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.08;
+            letter-spacing: -0.003em;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 21px;
+            line-height: 1.38;
+            font-weight: 400;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .value-card {
+            background: var(--background);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-icon {
+            font-size: 36px;
+            margin-bottom: 24px;
+        }
+
+        .value-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .value-description {
+            font-size: 17px;
+            line-height: 1.47;
+            color: var(--text-secondary);
+        }
+
+
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 22px;
+            background: var(--surface);
+        }
+
+        .stats-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 17px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .stat-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Vision Section */
+        .vision {
+            padding: 80px 22px;
+            background: var(--background);
+        }
+
+        .vision-container {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .vision-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .vision-title {
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 1.1;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+        }
+
+        .vision-text {
+            font-size: 19px;
+            line-height: 1.42;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .vision-points {
+            list-style: none;
+        }
+
+        .vision-points li {
+            font-size: 17px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .vision-points li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .vision-image {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 80px 22px;
+            background: var(--surface);
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 1.1;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            font-size: 19px;
+            line-height: 1.42;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 22px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            padding: 12px 24px;
+            border: 1px solid var(--primary-color);
+            border-radius: 22px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--background);
+            padding: 40px 22px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-headline {
+                font-size: 36px;
+            }
+
+            .hero-subheadline {
+                font-size: 21px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .story-content,
+            .vision-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .story-title,
+            .vision-title {
+                font-size: 28px;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-title {
+                font-size: 28px;
+            }
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">暖时光</a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">首页</a></li>
+                <li><a href="/features" class="nav-link">功能</a></li>
+                <li><a href="/solutions" class="nav-link">解决方案</a></li>
+                <li><a href="/about" class="nav-link active">关于我们</a></li>
+                
+            </ul>
+            <a href="#" class="nav-cta">关注上线</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1 class="hero-headline">关于暖时光</h1>
+            <p class="hero-subheadline">让爱更有温度，让陪伴更有质量</p>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story">
+        <div class="story-container">
+            <div class="story-content fade-in">
+                <div>
+                    <h2 class="story-title">我们的故事</h2>
+                    <p class="story-text">
+                        <strong>暖时光</strong>诞生于一个普通的周末午后。创始团队中的一位新手爸爸，看着刚学会爬行的女儿，突然意识到自己对如何科学陪伴孩子成长一无所知。
+                    </p>
+                    <p class="story-text">
+                        市面上的育儿机构费用高昂，时间地点受限；网上的育儿知识过于分散，缺乏系统性指导。如何让每个家庭都能享受专业、便捷、经济的陪伴服务？这个问题成为了我们创业的初心。
+                    </p>
+                    <p class="story-text">
+                        我们深信，<strong>最好的老师是父母，最好的课堂是家庭</strong>。通过AI技术和专业的陪伴理念，我们希望帮助每位家长成为孩子成长路上最好的陪伴者。
+                    </p>
+                    <p class="story-quote">
+                        "让爱更有温度，让陪伴更有质量" —— 这就是暖时光存在的意义。
+                    </p>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=600&h=400&fit=crop"
+                         alt="温馨的家庭时光"
+                         class="story-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values">
+        <div class="values-container">
+            <div class="section-header">
+                <h2 class="section-title">我们的价值观</h2>
+                <p class="section-subtitle">这些核心理念指引着我们的每一个决策和行动</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card fade-in">
+                    <div class="value-icon">🔬</div>
+                    <h3 class="value-title">科学专业</h3>
+                    <p class="value-description">
+                        基于儿童发展心理学和早期教育理论，确保每个活动都有科学依据和专业支撑
+                    </p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon">🤝</div>
+                    <h3 class="value-title">普惠共享</h3>
+                    <p class="value-description">
+                        让优质陪伴不再是少数人的特权，用技术降低成本，让更多家庭受益
+                    </p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon">❤️</div>
+                    <h3 class="value-title">温暖陪伴</h3>
+                    <p class="value-description">
+                        技术只是工具，真正的核心是温暖的亲子陪伴和情感连接
+                    </p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon">💡</div>
+                    <h3 class="value-title">持续创新</h3>
+                    <p class="value-description">
+                        不断探索AI技术在儿童陪伴领域的应用，持续优化产品体验和效果
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="section-header">
+                <h2 class="section-title">我们的成果</h2>
+                <p class="section-subtitle">用数字说话，用结果证明我们的价值</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">服务家庭</div>
+                    <div class="stat-description">内测期间积累</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">学习活动</div>
+                    <div class="stat-description">专业陪伴内容</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">用户满意度</div>
+                    <div class="stat-description">家长好评率</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">¥800+</div>
+                    <div class="stat-label">月均节省</div>
+                    <div class="stat-description">育儿费用</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="vision">
+        <div class="vision-container">
+            <div class="vision-content fade-in">
+                <div>
+                    <h2 class="vision-title">未来愿景</h2>
+                    <p class="vision-text">
+                        我们的愿景是成为全球领先的智能陪伴平台，让每个孩子都能享受到个性化、专业化的成长陪伴服务。
+                    </p>
+                    <ul class="vision-points">
+                        <li>覆盖更多地区，让不同文化背景的家庭都能受益</li>
+                        <li>运用更先进的AI技术，提供更精准的个性化服务</li>
+                        <li>连接家长、专家、机构，打造完整的育儿生态圈</li>
+                        <li>让每个孩子都拥有最好的成长开始</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop"
+                         alt="美好的未来"
+                         class="vision-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-container">
+            <h2 class="cta-title">与我们一起创造未来</h2>
+            <p class="cta-description">
+                加入暖时光，见证孩子的每一次成长，<br>
+                与千万家庭一起，让爱更有温度
+            </p>
+            <div>
+                <a href="#" class="btn-primary">关注上线动态</a>
+                <a href="#" class="btn-secondary">联系我们</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>产品</h4>
+                <ul>
+                    <li><a href="/features">功能特性</a></li>
+                    <li><a href="/solutions">解决方案</a></li>
+                    <li><a href="/music">音乐</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>支持</h4>
+                <ul>
+                    <li><a href="/faq">常见问题</a></li>
+                    <li><a href="/about">关于我们</a></li>
+                
+                    <li><a href="/privacy">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">客服邮箱</a></li>
+                    <li><a href="#">商务合作</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>公司</h4>
+                <ul>
+                    <li><a href="#">新闻动态</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">投资者关系</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 暖时光. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with fade-in class
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

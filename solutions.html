@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解决方案 - 暖时光</title>
+    <meta name="description" content="暖时光为不同年龄段和发展需求的孩子提供专业的AI驱动成长陪伴解决方案。">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #007AFF;
+            --secondary-color: #5AC8FA;
+            --text-primary: #1D1D1F;
+            --text-secondary: #86868B;
+            --background: #FBFBFD;
+            --surface: #FFFFFF;
+            --border: #D2D2D7;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.47;
+            color: var(--text-primary);
+            background: var(--background);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(251, 251, 253, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 0.5px solid var(--border);
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 44px;
+        }
+
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .nav-cta {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 120px 22px 80px;
+            text-align: center;
+            background: var(--surface);
+        }
+
+        .page-header-container {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.08;
+            letter-spacing: -0.003em;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .page-subtitle {
+            font-size: 21px;
+            line-height: 1.38;
+            font-weight: 400;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Solutions Grid */
+        .solutions {
+            padding: 80px 22px;
+            background: var(--background);
+        }
+
+        .solutions-container {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .solution-card {
+            background: var(--surface);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .solution-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-color);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 32px;
+            color: white;
+        }
+
+        .solution-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .solution-subtitle {
+            font-size: 17px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .solution-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .solution-features li {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .solution-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .solution-cta {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 22px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .solution-cta:hover {
+            transform: scale(1.05);
+        }
+
+        /* Use Cases */
+        .use-cases {
+            padding: 80px 22px;
+            background: var(--surface);
+        }
+
+        .use-cases-container {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 1.1;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            font-size: 19px;
+            line-height: 1.42;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .use-case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .use-case {
+            background: var(--background);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .use-case-emoji {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .use-case-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .use-case-description {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 80px 22px;
+            background: var(--background);
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 1.1;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            font-size: 19px;
+            line-height: 1.42;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 22px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            margin-right: 20px;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            padding: 12px 24px;
+            border: 1px solid var(--primary-color);
+            border-radius: 22px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--background);
+            padding: 40px 22px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-title {
+                font-size: 32px;
+            }
+
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .solution-card {
+                padding: 30px;
+            }
+
+            .use-case-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-title {
+                font-size: 28px;
+            }
+
+            .btn-primary, .btn-secondary {
+                display: block;
+                width: 100%;
+                margin: 0 0 10px 0;
+                text-align: center;
+            }
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">暖时光</a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">首页</a></li>
+                <li><a href="/features" class="nav-link">功能</a></li>
+                <li><a href="/solutions" class="nav-link active">解决方案</a></li>
+                <li><a href="/about" class="nav-link">关于我们</a></li>
+                
+            </ul>
+            <a href="#" class="nav-cta">关注上线</a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-container">
+            <h1 class="page-title">专业解决方案</h1>
+            <p class="page-subtitle">
+                针对不同年龄段和发展需求，为您的孩子提供最合适的AI驱动成长陪伴方案
+            </p>
+        </div>
+    </section>
+
+    <!-- Solutions -->
+    <section class="solutions">
+        <div class="solutions-container">
+            <div class="solutions-grid">
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">👶</div>
+                    <h3 class="solution-title">0-2岁基础启蒙</h3>
+                    <p class="solution-subtitle">专为婴幼儿设计的感官和运动发展方案</p>
+                    <ul class="solution-features">
+                        <li>感官刺激游戏</li>
+                        <li>大运动技能训练</li>
+                        <li>语言启蒙活动</li>
+                        <li>亲子互动指导</li>
+                        <li>安全注意事项</li>
+                        <li>发育里程碑追踪</li>
+                    </ul>
+                    <a href="#" class="solution-cta">了解详情</a>
+                </div>
+
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">🧒</div>
+                    <h3 class="solution-title">2-4岁全面发展</h3>
+                    <p class="solution-subtitle">语言爆发期和认知能力快速发展的综合方案</p>
+                    <ul class="solution-features">
+                        <li>语言表达训练</li>
+                        <li>认知思维游戏</li>
+                        <li>社交技能培养</li>
+                        <li>精细动作练习</li>
+                        <li>创意艺术活动</li>
+                        <li>情绪管理指导</li>
+                    </ul>
+                    <a href="#" class="solution-cta">了解详情</a>
+                </div>
+
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">👦</div>
+                    <h3 class="solution-title">4-6岁学前准备</h3>
+                    <p class="solution-subtitle">为入学做好充分准备的系统性训练方案</p>
+                    <ul class="solution-features">
+                        <li>学前数学概念</li>
+                        <li>阅读准备训练</li>
+                        <li>专注力培养</li>
+                        <li>规则意识建立</li>
+                        <li>独立能力训练</li>
+                        <li>学习习惯养成</li>
+                    </ul>
+                    <a href="#" class="solution-cta">了解详情</a>
+                </div>
+
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">🎯</div>
+                    <h3 class="solution-title">特殊需求定制</h3>
+                    <p class="solution-subtitle">针对发育迟缓或特殊需求孩子的个性化方案</p>
+                    <ul class="solution-features">
+                        <li>专业评估工具</li>
+                        <li>个性化训练计划</li>
+                        <li>康复训练指导</li>
+                        <li>家庭配合策略</li>
+                        <li>进度追踪记录</li>
+                        <li>专家咨询支持</li>
+                    </ul>
+                    <a href="#" class="solution-cta">了解详情</a>
+                </div>
+
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">🏠</div>
+                    <h3 class="solution-title">家庭陪伴指导</h3>
+                    <p class="solution-subtitle">帮助家长成为专业陪伴者的全方位支持</p>
+                    <ul class="solution-features">
+                        <li>家长培训课程</li>
+                        <li>活动执行指导</li>
+                        <li>问题解决方案</li>
+                        <li>经验分享社区</li>
+                        <li>专家在线答疑</li>
+                        <li>定期评估反馈</li>
+                    </ul>
+                    <a href="#" class="solution-cta">了解详情</a>
+                </div>
+
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">🏢</div>
+                    <h3 class="solution-title">机构合作方案</h3>
+                    <p class="solution-subtitle">为育儿机构和幼儿园提供的专业技术支持</p>
+                    <ul class="solution-features">
+                        <li>课程体系输出</li>
+                        <li>教师培训认证</li>
+                        <li>管理系统支持</li>
+                        <li>家长沟通工具</li>
+                        <li>数据分析报告</li>
+                        <li>品牌授权支持</li>
+                    </ul>
+                    <a href="#" class="solution-cta">了解详情</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="use-cases">
+        <div class="use-cases-container">
+            <div class="section-header">
+                <h2 class="section-title">适用场景</h2>
+                <p class="section-description">无论您面临什么样的育儿挑战，暖时光都能为您提供专业解决方案</p>
+            </div>
+            <div class="use-case-grid">
+                <div class="use-case fade-in">
+                    <div class="use-case-emoji">🤱</div>
+                    <h4 class="use-case-title">新手父母</h4>
+                    <p class="use-case-description">不知道如何科学育儿，需要专业指导和支持</p>
+                </div>
+                <div class="use-case fade-in">
+                    <div class="use-case-emoji">⏰</div>
+                    <h4 class="use-case-title">工作繁忙</h4>
+                    <p class="use-case-description">时间有限，希望高效利用陪伴时间</p>
+                </div>
+                <div class="use-case fade-in">
+                    <div class="use-case-emoji">💰</div>
+                    <h4 class="use-case-title">预算有限</h4>
+                    <p class="use-case-description">育儿机构费用太高，寻找性价比更好的方案</p>
+                </div>
+                <div class="use-case fade-in">
+                    <div class="use-case-emoji">🏠</div>
+                    <h4 class="use-case-title">居家育儿</div>
+                    <p class="use-case-description">在家带娃，需要丰富的活动内容和指导</p>
+                </div>
+                <div class="use-case fade-in">
+                    <div class="use-case-emoji">📊</div>
+                    <h4 class="use-case-title">科学追踪</h4>
+                    <p class="use-case-description">希望科学记录孩子发展进程，及时发现问题</p>
+                </div>
+                <div class="use-case fade-in">
+                    <div class="use-case-emoji">👨‍👩‍👧‍👦</div>
+                    <h4 class="use-case-title">多孩家庭</h4>
+                    <p class="use-case-description">需要同时照顾不同年龄段孩子的成长需求</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-container">
+            <h2 class="cta-title">找到适合您的解决方案</h2>
+            <p class="cta-description">
+                每个孩子都是独特的，让我们为您定制最合适的成长陪伴方案。<br>
+                立即体验，开启科学育儿之旅。
+            </p>
+            <div>
+                <a href="#" class="btn-primary">免费咨询</a>
+                <a href="#" class="btn-secondary">了解更多</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>产品</h4>
+                <ul>
+                    <li><a href="/features">功能特性</a></li>
+                    <li><a href="/solutions">解决方案</a></li>
+                    <li><a href="/music">音乐</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>支持</h4>
+                <ul>
+                    <li><a href="/faq">常见问题</a></li>
+                    <li><a href="/about">关于我们</a></li>
+                
+                    <li><a href="/privacy">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">客服邮箱</a></li>
+                    <li><a href="#">商务合作</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>公司</h4>
+                <ul>
+                    <li><a href="#">新闻动态</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">投资者关系</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 暖时光. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with fade-in class
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

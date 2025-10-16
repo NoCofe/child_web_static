@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私政策 - 暖时光成长陪伴助手</title>
+    <meta name="description" content="暖时光隐私政策：了解我们如何收集、使用和保护您的个人信息，确保用户隐私安全。">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #FFB6C1 0%, #FF7F7F 25%, #87CEEB  75%, #98FB98 100%);
+        }
+        .soft-shadow {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #FF7F7F, #FFB6C1);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #FF6B6B, #FFA0A0);
+            transform: translateY(-2px);
+        }
+        .sidebar-nav {
+            position: sticky;
+            top: 100px;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        .nav-link.active {
+            background: linear-gradient(135deg, #FF7F7F, #FFB6C1);
+            color: white;
+        }
+        .nav-link:not(.active):hover {
+            background-color: #f9fafb;
+            color: #ff7f7f;
+        }
+        .content-section {
+            scroll-margin-top: 100px;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3e2 0%, #fecaca 100%);
+            border-left: 4px solid #ff7f7f;
+        }
+        .important-note {
+            background: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 100%);
+            border-left: 4px solid #0288d1;
+        }
+        .search-highlight {
+            background-color: #fef3c7;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- 导航栏 -->
+    <nav class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 soft-shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="/" class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent">
+                            暖时光
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="/" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">首页</a>
+                        <a href="/features" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">功能</a>
+                        <a href="/solutions" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">解决方案</a>
+                        <a href="/faq" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">常见问题</a>
+                        <a href="/about" class="text-gray-600 hover:text-pink-500 font-medium transition-colors">关于我们</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <button class="btn-primary text-white px-6 py-3 rounded-2xl font-semibold">
+                        关注上线
+                    </button>
+                </div>
+                <!-- 移动端菜单按钮 -->
+                <div class="md:hidden">
+                    <button class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面头部 -->
+    <section class="gradient-bg py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4">
+                隐私政策
+            </h1>
+            <p class="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed mb-6">
+                我们深知隐私保护的重要性，严格遵循相关法律法规，保护用户个人信息安全
+            </p>
+            <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-4 inline-block">
+                <p class="text-white text-sm">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    最后更新：2025年9月 | 生效日期：产品正式上线日
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 搜索功能 -->
+    <section class="py-8 bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto">
+                <div class="relative">
+                    <input type="text"
+                           id="searchInput"
+                           placeholder="搜索政策内容..."
+                           class="w-full px-6 py-3 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-pink-400 transition-all">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <i class="fas fa-search text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要内容 -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+                <!-- 侧边导航 -->
+                <div class="lg:col-span-1">
+                    <div class="sidebar-nav bg-white rounded-2xl p-6 soft-shadow">
+                        <h3 class="text-lg font-bold text-gray-800 mb-4">目录导航</h3>
+                        <nav class="space-y-2">
+                            <a href="#overview" class="nav-link active block px-4 py-3 rounded-xl font-medium transition-all">
+                                <i class="fas fa-info-circle mr-2"></i>
+                                政策概述
+                            </a>
+                            <a href="#collection" class="nav-link block px-4 py-3 rounded-xl font-medium text-gray-600 transition-all">
+                                <i class="fas fa-database mr-2"></i>
+                                信息收集
+                            </a>
+                            <a href="#usage" class="nav-link block px-4 py-3 rounded-xl font-medium text-gray-600 transition-all">
+                                <i class="fas fa-cogs mr-2"></i>
+                                信息使用
+                            </a>
+                            <a href="#sharing" class="nav-link block px-4 py-3 rounded-xl font-medium text-gray-600 transition-all">
+                                <i class="fas fa-share mr-2"></i>
+                                信息共享
+                            </a>
+                            <a href="#storage" class="nav-link block px-4 py-3 rounded-xl font-medium text-gray-600 transition-all">
+                                <i class="fas fa-server mr-2"></i>
+                                信息存储
+                            </a>
+                            <a href="#security" class="nav-link block px-4 py-3 rounded-xl font-medium text-gray-600 transition-all">
+                                <i class="fas fa-shield-alt mr-2"></i>
+                                安全保护
+                            </a>
+                            <a href="#rights" class="nav-link block px-4 py-3 rounded-xl font-medium text-gray-600 transition-all">
+                                <i class="fas fa-user-shield mr-2"></i>
+                                用户权利
+                            </a>
+                            <a href="#children" class="nav-link block px-4 py-3 rounded-xl font-medium text-gray-600 transition-all">
+                                <i class="fas fa-child mr-2"></i>
+                                儿童隐私
+                            </a>
+                            <a href="#updates" class="nav-link block px-4 py-3 rounded-xl font-medium text-gray-600 transition-all">
+                                <i class="fas fa-sync mr-2"></i>
+                                政策更新
+                            </a>
+                            <a href="#contact" class="nav-link block px-4 py-3 rounded-xl font-medium text-gray-600 transition-all">
+                                <i class="fas fa-envelope mr-2"></i>
+                                联系我们
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- 内容区域 -->
+                <div class="lg:col-span-3">
+                    <div class="bg-white rounded-2xl p-8 soft-shadow">
+
+                        <!-- 政策概述 -->
+                        <section id="overview" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                                <i class="fas fa-info-circle text-pink-500 mr-3"></i>
+                                政策概述
+                            </h2>
+                            <div class="space-y-6 text-gray-700 leading-relaxed">
+                                <p>
+                                    欢迎使用暖时光成长陪伴助手（以下简称"暖时光"或"我们"）。本隐私政策适用于暖时光提供的所有产品和服务，包括但不限于移动应用程序、网站及相关服务。
+                                </p>
+                                <div class="highlight-box rounded-xl p-6">
+                                    <h3 class="font-bold text-gray-800 mb-3">
+                                        <i class="fas fa-exclamation-triangle text-orange-500 mr-2"></i>
+                                        重要声明
+                                    </h3>
+                                    <p class="text-sm">
+                                        我们深知个人信息对您的重要性，并会尽全力保护您的个人信息安全可靠。我们致力于维护您对我们的信任，恪守以下原则：权责一致原则、目的明确原则、选择同意原则、最少够用原则、确保安全原则、主体参与原则、公开透明原则等。
+                                    </p>
+                                </div>
+                                <p>
+                                    <strong>请您在使用我们的产品或服务前，仔细阅读并理解本政策</strong>。如您不同意本政策的任何内容，您应立即停止使用我们的产品或服务。您使用我们的产品或服务，即表示您已阅读并同意本政策。
+                                </p>
+                            </div>
+                        </section>
+
+                        <!-- 信息收集 -->
+                        <section id="collection" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                                <i class="fas fa-database text-blue-500 mr-3"></i>
+                                我们收集的信息
+                            </h2>
+                            <div class="space-y-6 text-gray-700 leading-relaxed">
+                                <p>我们遵循<strong>"最小必要"</strong>原则，仅收集实现产品功能所必需的信息：</p>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="bg-blue-50 rounded-xl p-6">
+                                        <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+                                            <i class="fas fa-user text-blue-500 mr-2"></i>
+                                            基本信息
+                                        </h3>
+                                        <ul class="space-y-2 text-sm">
+                                            <li>• 孩子年龄（精确到月份）</li>
+                                            <li>• 设备信息（设备型号、操作系统版本）</li>
+                                            <li>• 网络信息（IP地址、网络类型）</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-green-50 rounded-xl p-6">
+                                        <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+                                            <i class="fas fa-chart-line text-green-500 mr-2"></i>
+                                            使用数据
+                                        </h3>
+                                        <ul class="space-y-2 text-sm">
+                                            <li>• 学习活动完成情况</li>
+                                            <li>• 活动参与时长</li>
+                                            <li>• 家长反馈内容</li>
+                                            <li>• 应用使用偏好</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="important-note rounded-xl p-6">
+                                    <h3 class="font-bold text-gray-800 mb-3">
+                                        <i class="fas fa-shield-alt text-blue-600 mr-2"></i>
+                                        我们不会收集
+                                    </h3>
+                                    <ul class="space-y-2 text-sm">
+                                        <li>• 孩子或家长的姓名、身份证号等身份信息</li>
+                                        <li>• 家庭住址、电话号码等联系方式</li>
+                                        <li>• 照片、视频、音频等多媒体内容</li>
+                                        <li>• 其他与产品功能无关的个人信息</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 信息使用 -->
+                        <section id="usage" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                                <i class="fas fa-cogs text-green-500 mr-3"></i>
+                                信息使用方式
+                            </h2>
+                            <div class="space-y-6 text-gray-700 leading-relaxed">
+                                <p>我们收集的信息仅用于以下目的：</p>
+
+                                <div class="space-y-4">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="bg-pink-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                            <i class="fas fa-brain text-pink-500"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-gray-800 mb-2">个性化推荐</h3>
+                                            <p>根据孩子的年龄和学习历史，提供个性化的学习计划和活动推荐</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-4">
+                                        <div class="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                            <i class="fas fa-chart-pie text-blue-500"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-gray-800 mb-2">成长报告生成</h3>
+                                            <p>基于学习数据生成成长报告，帮助家长了解孩子的发展情况</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-4">
+                                        <div class="bg-green-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                            <i class="fas fa-sync text-green-500"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-gray-800 mb-2">产品优化</h3>
+                                            <p>分析用户使用模式，持续改进产品功能和用户体验</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-4">
+                                        <div class="bg-purple-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                            <i class="fas fa-headset text-purple-500"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-gray-800 mb-2">客户服务</h3>
+                                            <p>为您提供客户支持、处理您的咨询和反馈</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 信息共享 -->
+                        <section id="sharing" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                                <i class="fas fa-share text-orange-500 mr-3"></i>
+                                信息共享与披露
+                            </h2>
+                            <div class="space-y-6 text-gray-700 leading-relaxed">
+                                <div class="highlight-box rounded-xl p-6">
+                                    <h3 class="font-bold text-gray-800 mb-3">
+                                        <i class="fas fa-hand-paper text-orange-500 mr-2"></i>
+                                        原则声明
+                                    </h3>
+                                    <p class="text-sm">
+                                        我们不会向任何第三方出售、出租、共享或披露您的个人信息，除非获得您的明确同意或法律法规另有规定。
+                                    </p>
+                                </div>
+
+                                <h3 class="text-xl font-bold text-gray-800">例外情况</h3>
+                                <p>在以下情况下，我们可能会共享您的信息：</p>
+
+                                <div class="space-y-3">
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                            <span class="text-white text-xs font-bold">1</span>
+                                        </div>
+                                        <p><strong>法律要求：</strong>根据法律法规、诉讼、政府要求披露信息</p>
+                                    </div>
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                            <span class="text-white text-xs font-bold">2</span>
+                                        </div>
+                                        <p><strong>安全防护：</strong>为维护暖时光用户或公众的人身财产安全免遭侵害</p>
+                                    </div>
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                            <span class="text-white text-xs font-bold">3</span>
+                                        </div>
+                                        <p><strong>服务提供：</strong>与授权合作伙伴共享必要信息以提供服务（如云存储服务商）</p>
+                                    </div>
+                                </div>
+
+                                <div class="important-note rounded-xl p-6">
+                                    <h3 class="font-bold text-gray-800 mb-3">
+                                        <i class="fas fa-info-circle text-blue-600 mr-2"></i>
+                                        合作伙伴管理
+                                    </h3>
+                                    <p class="text-sm">
+                                        对于必要的合作伙伴，我们会与其签署严格的数据保护协议，要求其按照我们的指示、本隐私政策以及相关的保密和安全措施来处理个人信息。
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 信息存储 -->
+                        <section id="storage" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                                <i class="fas fa-server text-indigo-500 mr-3"></i>
+                                信息存储与保留
+                            </h2>
+                            <div class="space-y-6 text-gray-700 leading-relaxed">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="bg-indigo-50 rounded-xl p-6">
+                                        <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+                                            <i class="fas fa-globe text-indigo-500 mr-2"></i>
+                                            存储地点
+                                        </h3>
+                                        <ul class="space-y-2 text-sm">
+                                            <li>• 服务器位于中华人民共和国境内</li>
+                                            <li>• 使用国内知名云服务提供商</li>
+                                            <li>• 符合数据本地化相关要求</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-purple-50 rounded-xl p-6">
+                                        <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+                                            <i class="fas fa-clock text-purple-500 mr-2"></i>
+                                            保留期限
+                                        </h3>
+                                        <ul class="space-y-2 text-sm">
+                                            <li>• 账户注销后30天内删除个人信息</li>
+                                            <li>• 匿名化处理的统计数据可长期保留</li>
+                                            <li>• 法律要求的信息按法定期限保留</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <h3 class="text-xl font-bold text-gray-800">存储安全措施</h3>
+                                <div class="space-y-3">
+                                    <div class="flex items-center space-x-3">
+                                        <i class="fas fa-lock text-green-500"></i>
+                                        <span>数据传输采用SSL/TLS加密</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <i class="fas fa-database text-green-500"></i>
+                                        <span>数据存储采用AES-256加密</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <i class="fas fa-shield-alt text-green-500"></i>
+                                        <span>定期备份和灾难恢复机制</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <i class="fas fa-user-lock text-green-500"></i>
+                                        <span>严格的员工权限管理制度</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 安全保护 -->
+                        <section id="security" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                                <i class="fas fa-shield-alt text-red-500 mr-3"></i>
+                                安全保护措施
+                            </h2>
+                            <div class="space-y-6 text-gray-700 leading-relaxed">
+                                <p>我们采用行业领先的安全技术和管理措施保护您的个人信息：</p>
+
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <div class="bg-red-50 rounded-xl p-6 text-center">
+                                        <div class="bg-red-500 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <i class="fas fa-lock text-white"></i>
+                                        </div>
+                                        <h3 class="font-bold text-gray-800 mb-2">技术保护</h3>
+                                        <p class="text-sm">加密传输、访问控制、防火墙保护</p>
+                                    </div>
+                                    <div class="bg-blue-50 rounded-xl p-6 text-center">
+                                        <div class="bg-blue-500 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <i class="fas fa-users text-white"></i>
+                                        </div>
+                                        <h3 class="font-bold text-gray-800 mb-2">管理保护</h3>
+                                        <p class="text-sm">员工培训、权限管理、审计监控</p>
+                                    </div>
+                                    <div class="bg-green-50 rounded-xl p-6 text-center">
+                                        <div class="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <i class="fas fa-building text-white"></i>
+                                        </div>
+                                        <h3 class="font-bold text-gray-800 mb-2">物理保护</h3>
+                                        <p class="text-sm">数据中心安全、设备管理、环境监控</p>
+                                    </div>
+                                </div>
+
+                                <div class="highlight-box rounded-xl p-6">
+                                    <h3 class="font-bold text-gray-800 mb-3">
+                                        <i class="fas fa-exclamation-triangle text-orange-500 mr-2"></i>
+                                        安全事件处理
+                                    </h3>
+                                    <p class="text-sm">
+                                        若发生个人信息安全事件，我们将立即启动应急预案，阻止安全事件扩大，并按照法律法规的要求及时向相关监管部门报告，向您告知事件基本情况、可能的影响、已采取的处置措施、建议您采取的风险防范措施等。
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 用户权利 -->
+                        <section id="rights" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                                <i class="fas fa-user-shield text-purple-500 mr-3"></i>
+                                您的权利
+                            </h2>
+                            <div class="space-y-6 text-gray-700 leading-relaxed">
+                                <p>您对自己的个人信息享有以下权利：</p>
+
+                                <div class="space-y-4">
+                                    <div class="border border-gray-200 rounded-xl p-6">
+                                        <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+                                            <i class="fas fa-eye text-blue-500 mr-2"></i>
+                                            查阅权
+                                        </h3>
+                                        <p class="text-sm">您有权查阅我们收集、使用您个人信息的情况，以及个人信息的存储和处理情况。</p>
+                                    </div>
+
+                                    <div class="border border-gray-200 rounded-xl p-6">
+                                        <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+                                            <i class="fas fa-copy text-green-500 mr-2"></i>
+                                            复制权
+                                        </h3>
+                                        <p class="text-sm">您有权获取您的个人信息副本。根据您的要求，我们会在技术可行的前提下，为您提供相应的个人信息副本。</p>
+                                    </div>
+
+                                    <div class="border border-gray-200 rounded-xl p-6">
+                                        <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+                                            <i class="fas fa-edit text-orange-500 mr-2"></i>
+                                            更正权
+                                        </h3>
+                                        <p class="text-sm">如果您发现我们处理的关于您的个人信息有错误，您有权要求我们做出更正或补充。</p>
+                                    </div>
+
+                                    <div class="border border-gray-200 rounded-xl p-6">
+                                        <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+                                            <i class="fas fa-trash text-red-500 mr-2"></i>
+                                            删除权
+                                        </h3>
+                                        <p class="text-sm">在特定条件下，您有权要求我们删除您的个人信息。我们会在验证您的身份后，依据您的要求进行处理。</p>
+                                    </div>
+                                </div>
+
+                                <div class="important-note rounded-xl p-6">
+                                    <h3 class="font-bold text-gray-800 mb-3">
+                                        <i class="fas fa-info-circle text-blue-600 mr-2"></i>
+                                        权利行使方式
+                                    </h3>
+                                    <p class="text-sm mb-3">
+                                        您可以通过以下方式行使上述权利：
+                                    </p>
+                                    <ul class="space-y-1 text-sm">
+                                        <li>• 在应用内通过"设置-隐私设置"功能</li>
+                                        <li>• 发送邮件至 privacy@warmtime.com</li>
+                                        <li>• 联系我们的客服人员</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 儿童隐私 -->
+                        <section id="children" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                                <i class="fas fa-child text-yellow-500 mr-3"></i>
+                                儿童隐私保护
+                            </h2>
+                            <div class="space-y-6 text-gray-700 leading-relaxed">
+                                <div class="highlight-box rounded-xl p-6">
+                                    <h3 class="font-bold text-gray-800 mb-3">
+                                        <i class="fas fa-heart text-pink-500 mr-2"></i>
+                                        特别关注
+                                    </h3>
+                                    <p class="text-sm">
+                                        我们特别重视对儿童个人信息的保护。如果您是14周岁以下的儿童，请在监护人指导下阅读本政策，并在监护人同意后使用我们的服务。
+                                    </p>
+                                </div>
+
+                                <h3 class="text-xl font-bold text-gray-800">儿童信息处理原则</h3>
+                                <div class="space-y-3">
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                            <span class="text-white text-xs font-bold">1</span>
+                                        </div>
+                                        <p><strong>监护人同意：</strong>收集、使用14周岁以下儿童个人信息需要监护人明示同意</p>
+                                    </div>
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                            <span class="text-white text-xs font-bold">2</span>
+                                        </div>
+                                        <p><strong>最小化原则：</strong>仅收集为提供服务所必要的儿童个人信息</p>
+                                    </div>
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                            <span class="text-white text-xs font-bold">3</span>
+                                        </div>
+                                        <p><strong>加强保护：</strong>对儿童个人信息采用更高的安全保护标准</p>
+                                    </div>
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                            <span class="text-white text-xs font-bold">4</span>
+                                        </div>
+                                        <p><strong>监护人权利：</strong>监护人有权查阅、更正、删除儿童的个人信息</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 政策更新 -->
+                        <section id="updates" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                                <i class="fas fa-sync text-teal-500 mr-3"></i>
+                                政策更新
+                            </h2>
+                            <div class="space-y-6 text-gray-700 leading-relaxed">
+                                <p>
+                                    我们可能会不时更新本隐私政策。当隐私政策发生变更时，我们会通过以下方式通知您：
+                                </p>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="bg-teal-50 rounded-xl p-6">
+                                        <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+                                            <i class="fas fa-bell text-teal-500 mr-2"></i>
+                                            通知方式
+                                        </h3>
+                                        <ul class="space-y-2 text-sm">
+                                            <li>• 在应用内发送通知</li>
+                                            <li>• 在网站首页发布公告</li>
+                                            <li>• 通过邮件或短信通知</li>
+                                            <li>• 其他合理方式</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-blue-50 rounded-xl p-6">
+                                        <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+                                            <i class="fas fa-calendar text-blue-500 mr-2"></i>
+                                            生效时间
+                                        </h3>
+                                        <ul class="space-y-2 text-sm">
+                                            <li>• 重大变更：30天后生效</li>
+                                            <li>• 一般变更：7天后生效</li>
+                                            <li>• 您可在此期间表达意见</li>
+                                            <li>• 继续使用即视为同意</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="important-note rounded-xl p-6">
+                                    <h3 class="font-bold text-gray-800 mb-3">
+                                        <i class="fas fa-info-circle text-blue-600 mr-2"></i>
+                                        重大变更定义
+                                    </h3>
+                                    <p class="text-sm mb-3">
+                                        以下情况下，我们认为是重大变更：
+                                    </p>
+                                    <ul class="space-y-1 text-sm">
+                                        <li>• 我们的服务模式发生重大变化</li>
+                                        <li>• 个人信息共享、转让或公开披露的主要对象发生变化</li>
+                                        <li>• 您参与个人信息处理方面的权利及其行使方式发生重大变化</li>
+                                        <li>• 我们负责处理个人信息安全的责任部门、联络方式及投诉渠道发生变化</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 联系我们 -->
+                        <section id="contact" class="content-section">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                                <i class="fas fa-envelope text-indigo-500 mr-3"></i>
+                                联系我们
+                            </h2>
+                            <div class="space-y-6 text-gray-700 leading-relaxed">
+                                <p>
+                                    如果您对本隐私政策有任何疑问、意见或建议，或需要行使相关权利，请通过以下方式联系我们：
+                                </p>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="bg-indigo-50 rounded-xl p-6">
+                                        <h3 class="font-bold text-gray-800 mb-4 flex items-center">
+                                            <i class="fas fa-headset text-indigo-500 mr-2"></i>
+                                            客服联系
+                                        </h3>
+                                        <div class="space-y-3 text-sm">
+                                            <div class="flex items-center space-x-3">
+                                                <i class="fas fa-envelope text-gray-400"></i>
+                                                <span>privacy@warmtime.com</span>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <i class="fab fa-weixin text-gray-400"></i>
+                                                <span>客服微信：WarmTime_Support</span>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <i class="fas fa-clock text-gray-400"></i>
+                                                <span>工作时间：9:00-18:00（工作日）</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-gray-50 rounded-xl p-6">
+                                        <h3 class="font-bold text-gray-800 mb-4 flex items-center">
+                                            <i class="fas fa-building text-gray-500 mr-2"></i>
+                                            公司信息
+                                        </h3>
+                                        <div class="space-y-3 text-sm">
+                                            <div>
+                                                <strong>公司名称：</strong><br>
+                                                暖时光（北京）科技有限公司
+                                            </div>
+                                            <div>
+                                                <strong>注册地址：</strong><br>
+                                                北京市海淀区xxx路xxx号
+                                            </div>
+                                            <div>
+                                                <strong>邮政编码：</strong>100000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="highlight-box rounded-xl p-6">
+                                    <h3 class="font-bold text-gray-800 mb-3">
+                                        <i class="fas fa-clock text-orange-500 mr-2"></i>
+                                        响应时间承诺
+                                    </h3>
+                                    <p class="text-sm">
+                                        我们将在收到您的请求后15个工作日内予以回复。如因技术原因无法在规定时间内回复，我们会及时向您说明原因和延期期限。
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA 区域 -->
+    <section class="py-16 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+                您的信任，我们的责任
+            </h2>
+            <p class="text-lg text-white/90 mb-6 leading-relaxed">
+                隐私保护是我们的承诺，安全陪伴是我们的使命
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary text-white px-6 py-3 rounded-2xl font-semibold">
+                    <i class="fas fa-bell mr-2"></i>
+                    关注上线动态
+                </button>
+                <button class="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-2xl font-semibold hover:bg-white/30 transition-all">
+                    <i class="fas fa-home mr-2"></i>
+                    返回首页
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent mb-4">
+                        暖时光
+                    </h3>
+                    <p class="text-gray-600 mb-4 max-w-md text-sm">
+                        AI驱动的专业成长陪伴，给0-6岁孩子每日个性化学习计划与成长评估，让家长省心更安心。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">
+                            <i class="fab fa-weixin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">
+                            <i class="fab fa-weibo"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-3 text-sm">产品</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/features" class="text-gray-600 hover:text-pink-500 transition-colors">功能特性</a></li>
+                        <li><a href="/solutions" class="text-gray-600 hover:text-pink-500 transition-colors">解决方案</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-3 text-sm">支持</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/faq" class="text-gray-600 hover:text-pink-500 transition-colors">常见问题</a></li>
+                        <li><a href="/about" class="text-gray-600 hover:text-pink-500 transition-colors">关于我们</a></li>
+                
+                        <li><a href="#" class="text-gray-600 hover:text-pink-500 transition-colors">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-6 text-center">
+                <p class="text-gray-500 text-sm">
+                    © 2025 暖时光. 保留所有权利。
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 导航功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.content-section');
+            const searchInput = document.getElementById('searchInput');
+
+            // 导航点击
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                        updateActiveNav(this);
+                    }
+                });
+            });
+
+            // 滚动监听
+            window.addEventListener('scroll', function() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 120;
+                    if (window.pageYOffset >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                if (current) {
+                    const activeLink = document.querySelector(`a[href="#${current}"]`);
+                    if (activeLink) {
+                        updateActiveNav(activeLink);
+                    }
+                }
+            });
+
+            // 搜索功能
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+
+                if (searchTerm === '') {
+                    removeAllHighlights();
+                    return;
+                }
+
+                removeAllHighlights();
+                highlightSearchTerms(searchTerm);
+            });
+
+            function updateActiveNav(activeLink) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    link.classList.add('text-gray-600');
+                });
+                activeLink.classList.add('active');
+                activeLink.classList.remove('text-gray-600');
+            }
+
+            function highlightSearchTerms(searchTerm) {
+                sections.forEach(section => {
+                    const textNodes = getTextNodes(section);
+                    textNodes.forEach(node => {
+                        const text = node.textContent.toLowerCase();
+                        if (text.includes(searchTerm)) {
+                            const parent = node.parentNode;
+                            const originalText = node.textContent;
+                            const regex = new RegExp(`(${searchTerm})`, 'gi');
+                            const highlightedText = originalText.replace(regex, '<span class="search-highlight">$1</span>');
+
+                            const wrapper = document.createElement('span');
+                            wrapper.innerHTML = highlightedText;
+                            parent.replaceChild(wrapper, node);
+                        }
+                    });
+                });
+            }
+
+            function removeAllHighlights() {
+                const highlights = document.querySelectorAll('.search-highlight');
+                highlights.forEach(highlight => {
+                    const parent = highlight.parentNode;
+                    parent.replaceChild(document.createTextNode(highlight.textContent), highlight);
+                    parent.normalize();
+                });
+            }
+
+            function getTextNodes(element) {
+                const textNodes = [];
+                const walker = document.createTreeWalker(
+                    element,
+                    NodeFilter.SHOW_TEXT,
+                    null,
+                    false
+                );
+
+                let node;
+                while (node = walker.nextNode()) {
+                    if (node.textContent.trim() !== '') {
+                        textNodes.push(node);
+                    }
+                }
+                return textNodes;
+            }
+        });
+    </script>
+</body>
+</html>

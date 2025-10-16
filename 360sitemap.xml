@@ -1,0 +1,1500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset>
+  <!-- 主页 -->
+  <url>
+    <loc>http://www.lumij.top</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- 主要功能页面 -->
+  <url>
+    <loc>http://www.lumij.top/development</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/faq</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/about</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/help</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/contact</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/feedback</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- 月龄发展页面 -->
+  <url>
+    <loc>http://www.lumij.top/development?age=1</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=2</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=3</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=4</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=5</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=6</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=7</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=8</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=9</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=10</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=11</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=12</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=15</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=18</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=21</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=24</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=27</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=30</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=33</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=36</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=42</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=48</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=54</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=60</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=66</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=72</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=78</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/development?age=84</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- 所有文章页面 (92篇) -->
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_1</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_2</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_3</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_4</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_5</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_6</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_7</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_8</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_9</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_10</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_11</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_12</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_13</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_14</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_15</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_16</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_17</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_18</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_19</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_20</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_21</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_22</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_23</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_24</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_25</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_26</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_27</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_28</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_29</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_30</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_31</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_32</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_33</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_34</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_35</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_36</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_37</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_38</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_39</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_40</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_41</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_42</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_43</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_44</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_45</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_46</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_47</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_48</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_49</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_50</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_51</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_52</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_53</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_54</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_55</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_56</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_57</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_58</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_59</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_60</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_61</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_62</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_63</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_64</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_65</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_66</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_67</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_68</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_69</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_70</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_71</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_72</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_73</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_74</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_75</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_76</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_77</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_78</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_79</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_80</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_81</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_82</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_83</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_84</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_85</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_86</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_87</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_88</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_89</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_90</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_91</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/knowledge/article_92</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- 基础活动页面 -->
+  <url>
+    <loc>http://www.lumij.top/activities/activity_1</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_3</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_4</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- 2-3岁分类活动页面 -->
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_fine_1</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_fine_2</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_fine_3</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_fine_4</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_fine_5</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_fine_6</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_fine_7</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_fine_8</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_fine_9</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_fine_10</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_gross_1</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_gross_2</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_gross_3</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_gross_4</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_gross_5</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_gross_6</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_gross_7</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_gross_8</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_gross_9</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_gross_10</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_lang_1</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_lang_2</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_lang_3</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_lang_4</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_lang_5</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_lang_6</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_lang_7</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_lang_8</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_lang_9</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_lang_10</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_cog_1</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_cog_2</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_cog_3</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_cog_4</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_cog_5</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_cog_6</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_cog_7</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_cog_8</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_cog_9</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_cog_10</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_social_1</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_social_2</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_social_3</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_social_4</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_social_5</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_social_6</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_social_7</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_social_8</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_social_9</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_social_10</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_sensory_1</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_sensory_2</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_sensory_3</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_sensory_4</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_sensory_5</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_sensory_6</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_sensory_7</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_sensory_8</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_sensory_9</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_sensory_10</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_creative_1</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_creative_2</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_creative_3</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_creative_4</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_creative_5</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_creative_6</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_creative_7</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_creative_8</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_creative_9</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_creative_10</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_daily_1</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_daily_2</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_daily_3</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_daily_4</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_daily_5</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_daily_6</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_daily_7</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_daily_8</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_daily_9</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lumij.top/activities/activity_2_3_daily_10</loc>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+</urlset>
