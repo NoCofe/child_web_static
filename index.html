@@ -151,6 +151,142 @@
             height: 14px;
         }
 
+        /* 安装引导弹窗 */
+        .install-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .install-modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--surface);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .install-modal h3 {
+            color: var(--text-primary);
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .install-modal p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .install-steps {
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .install-step {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            background: var(--background);
+            border-radius: 10px;
+        }
+
+        .install-step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .install-step-text {
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .install-modal-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .install-modal-button {
+            padding: 10px 20px;
+            border-radius: 12px;
+            border: none;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .install-modal-button.primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .install-modal-button.primary:hover {
+            background: #0056CC;
+        }
+
+        .install-modal-button.secondary {
+            background: var(--background);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .install-modal-button.secondary:hover {
+            background: var(--border);
+        }
+
+        /* 安装成功提示 */
+        .install-success {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #34C759;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            font-size: 14px;
+            z-index: 1001;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
         /* Hero Section */
         .hero {
             padding: 120px 22px 80px;
@@ -813,10 +949,43 @@
         </div>
     </footer>
 
+    <!-- 安装引导弹窗 -->
+    <div id="installModal" class="install-modal">
+        <div class="install-modal-content">
+            <h3>安装暖时光到桌面</h3>
+            <p>将暖时光添加到主屏幕，享受更好的使用体验</p>
+            <div id="installSteps" class="install-steps">
+                <!-- 步骤内容将通过JavaScript动态生成 -->
+            </div>
+            <div class="install-modal-buttons">
+                <button class="install-modal-button secondary" onclick="closeInstallModal()">稍后再说</button>
+                <button id="installModalButton" class="install-modal-button primary">立即安装</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 安装成功提示 -->
+    <div id="installSuccess" class="install-success">
+        ✅ 暖时光已成功添加到桌面！
+    </div>
+
     <script>
         // PWA 相关变量
         let deferredPrompt;
         const installButton = document.getElementById('installButton');
+        const installModal = document.getElementById('installModal');
+        const installModalButton = document.getElementById('installModalButton');
+        const installSuccess = document.getElementById('installSuccess');
+        const installSteps = document.getElementById('installSteps');
+
+        // 平台检测
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const isAndroid = /Android/.test(navigator.userAgent);
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        const isEdge = /Edg/.test(navigator.userAgent);
+        const isInStandaloneMode = ('standalone' in window.navigator) && (window.navigator.standalone);
+        const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
 
         // Service Worker 注册
         if ('serviceWorker' in navigator) {
@@ -831,67 +1000,171 @@
             });
         }
 
-        // PWA 安装提示
+        // 生成安装步骤
+        function generateInstallSteps() {
+            let steps = [];
+            
+            if (isIOS && isSafari) {
+                steps = [
+                    '点击底部的分享按钮 📤',
+                    '向下滑动找到"添加到主屏幕"',
+                    '点击"添加到主屏幕"',
+                    '点击右上角的"添加"确认'
+                ];
+            } else if (isAndroid && isChrome) {
+                steps = [
+                    '点击浏览器菜单 ⋮',
+                    '选择"添加到主屏幕"',
+                    '确认应用名称',
+                    '点击"添加"完成安装'
+                ];
+            } else if (isChrome || isEdge) {
+                steps = [
+                    '点击地址栏右侧的安装图标 ⬇️',
+                    '在弹出窗口中点击"安装"',
+                    '等待应用下载完成',
+                    '享受桌面应用体验！'
+                ];
+            } else {
+                steps = [
+                    '点击浏览器菜单',
+                    '寻找"添加到主屏幕"或"安装"选项',
+                    '按照提示完成安装',
+                    '从桌面或应用列表启动'
+                ];
+            }
+
+            installSteps.innerHTML = steps.map((step, index) => `
+                <div class="install-step">
+                    <div class="install-step-number">${index + 1}</div>
+                    <div class="install-step-text">${step}</div>
+                </div>
+            `).join('');
+        }
+
+        // 显示安装弹窗
+        function showInstallModal() {
+            generateInstallSteps();
+            installModal.style.display = 'block';
+            
+            // 根据平台调整按钮文本和行为
+            if (deferredPrompt) {
+                installModalButton.textContent = '立即安装';
+                installModalButton.onclick = async () => {
+                    try {
+                        deferredPrompt.prompt();
+                        const { outcome } = await deferredPrompt.userChoice;
+                        console.log(`User response: ${outcome}`);
+                        
+                        if (outcome === 'accepted') {
+                            showInstallSuccess();
+                            closeInstallModal();
+                            installButton.style.display = 'none';
+                        }
+                        
+                        deferredPrompt = null;
+                    } catch (error) {
+                        console.error('Install prompt failed:', error);
+                    }
+                };
+            } else {
+                installModalButton.textContent = '我知道了';
+                installModalButton.onclick = () => {
+                    closeInstallModal();
+                    // 记住用户已经看过安装指引
+                    localStorage.setItem('installGuideShown', 'true');
+                };
+            }
+        }
+
+        // 关闭安装弹窗
+        function closeInstallModal() {
+            installModal.style.display = 'none';
+        }
+
+        // 显示安装成功提示
+        function showInstallSuccess() {
+            installSuccess.style.display = 'block';
+            setTimeout(() => {
+                installSuccess.style.display = 'none';
+            }, 3000);
+        }
+
+        // PWA 安装提示事件
         window.addEventListener('beforeinstallprompt', (e) => {
             console.log('beforeinstallprompt event fired');
-            // 阻止默认的安装提示
             e.preventDefault();
-            // 保存事件，以便稍后触发
             deferredPrompt = e;
-            // 显示安装按钮
             installButton.style.display = 'flex';
         });
 
         // 安装按钮点击事件
-        installButton.addEventListener('click', async () => {
-            if (deferredPrompt) {
-                // 显示安装提示
-                deferredPrompt.prompt();
-                // 等待用户响应
-                const { outcome } = await deferredPrompt.userChoice;
-                console.log(`User response to the install prompt: ${outcome}`);
-                // 清除保存的事件
-                deferredPrompt = null;
-                // 隐藏安装按钮
-                installButton.style.display = 'none';
-            }
+        installButton.addEventListener('click', () => {
+            showInstallModal();
         });
 
         // 检测应用是否已安装
         window.addEventListener('appinstalled', (evt) => {
             console.log('App was installed');
             installButton.style.display = 'none';
+            showInstallSuccess();
         });
 
-        // 检测是否在独立模式下运行（已安装）
-        if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
-            console.log('App is running in standalone mode');
-            installButton.style.display = 'none';
-        }
+        // 点击弹窗外部关闭
+        installModal.addEventListener('click', (e) => {
+            if (e.target === installModal) {
+                closeInstallModal();
+            }
+        });
 
-        // iOS Safari 特殊处理
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        const isInStandaloneMode = ('standalone' in window.navigator) && (window.navigator.standalone);
+        // 初始化安装按钮显示逻辑
+        function initInstallButton() {
+            // 如果已经在独立模式下运行，隐藏安装按钮
+            if (isStandalone || isInStandaloneMode) {
+                console.log('App is running in standalone mode');
+                installButton.style.display = 'none';
+                return;
+            }
 
-        if (isIOS && !isInStandaloneMode) {
-            // 为iOS用户显示自定义安装提示
-            setTimeout(() => {
-                if (installButton.style.display === 'none') {
+            // 检查是否已经显示过安装指引
+            const guideShown = localStorage.getItem('installGuideShown');
+            
+            // 对于支持PWA但没有beforeinstallprompt的情况
+            if ((isIOS && isSafari) || (isAndroid && !deferredPrompt)) {
+                if (!guideShown) {
                     installButton.style.display = 'flex';
                     installButton.innerHTML = `
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                            <line x1="9" y1="9" x2="15" y2="15"/>
-                            <line x1="15" y1="9" x2="9" y2="15"/>
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7,10 12,15 17,10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
                         </svg>
                         添加到主屏
                     `;
-                    installButton.onclick = () => {
-                        alert('请点击分享按钮，然后选择"添加到主屏幕"');
-                    };
                 }
-            }, 3000);
+            }
+
+            // 延迟显示安装提示（给用户一些时间浏览网站）
+            if (!guideShown && !isStandalone && !isInStandaloneMode) {
+                setTimeout(() => {
+                    if (installButton.style.display !== 'none') {
+                        // 可以在这里添加更温和的提示，比如小动画
+                        installButton.style.animation = 'pulse 2s infinite';
+                    }
+                }, 10000); // 10秒后开始提示
+            }
         }
+
+        // 添加脉冲动画
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
 
         // Intersection Observer for animations
         const observerOptions = {
@@ -907,13 +1180,20 @@
             });
         }, observerOptions);
 
-        // Observe all elements with fade-in class
+        // 页面加载完成后初始化
         document.addEventListener('DOMContentLoaded', function() {
+            // 初始化动画观察器
             const fadeElements = document.querySelectorAll('.fade-in');
             fadeElements.forEach(element => {
                 observer.observe(element);
             });
+
+            // 初始化安装按钮
+            initInstallButton();
         });
+
+        // 全局函数供HTML调用
+        window.closeInstallModal = closeInstallModal;
     </script>
 </body>
 </html>
