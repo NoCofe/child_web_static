@@ -981,9 +981,9 @@
         // 平台检测
         const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
         const isAndroid = /Android/.test(navigator.userAgent);
-        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-        const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-        const isEdge = /Edg/.test(navigator.userAgent);
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent) && !isIOS ? false : /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+        const isChrome = /Chrome/.test(navigator.userAgent) || /CriOS/.test(navigator.userAgent); // CriOS是iOS上的Chrome
+        const isEdge = /Edg/.test(navigator.userAgent) || /EdgiOS/.test(navigator.userAgent); // EdgiOS是iOS上的Edge
         const isInStandaloneMode = ('standalone' in window.navigator) && (window.navigator.standalone);
         const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
 
@@ -1003,33 +1003,44 @@
         // 生成安装步骤
         function generateInstallSteps() {
             let steps = [];
+            let browserName = '';
             
-            if (isIOS && isSafari) {
+            if (isIOS) {
+                // iOS上所有浏览器都需要通过分享按钮添加到主屏幕
+                if (isChrome) {
+                    browserName = 'Chrome';
+                } else if (isSafari) {
+                    browserName = 'Safari';
+                } else {
+                    browserName = '浏览器';
+                }
+                
                 steps = [
-                    '点击底部的分享按钮 📤',
-                    '向下滑动找到"添加到主屏幕"',
+                    `在${browserName}中点击底部的分享按钮 📤`,
+                    '向下滑动找到"添加到主屏幕"选项',
                     '点击"添加到主屏幕"',
-                    '点击右上角的"添加"确认'
+                    '点击右上角的"添加"确认安装'
                 ];
             } else if (isAndroid && isChrome) {
                 steps = [
-                    '点击浏览器菜单 ⋮',
+                    '点击浏览器右上角的菜单 ⋮',
                     '选择"添加到主屏幕"',
-                    '确认应用名称',
+                    '确认应用名称和图标',
                     '点击"添加"完成安装'
                 ];
-            } else if (isChrome || isEdge) {
+            } else if ((isChrome || isEdge) && !isIOS) {
+                // 桌面版Chrome/Edge支持原生PWA安装
                 steps = [
                     '点击地址栏右侧的安装图标 ⬇️',
                     '在弹出窗口中点击"安装"',
                     '等待应用下载完成',
-                    '享受桌面应用体验！'
+                    '从桌面或开始菜单启动应用'
                 ];
             } else {
                 steps = [
-                    '点击浏览器菜单',
-                    '寻找"添加到主屏幕"或"安装"选项',
-                    '按照提示完成安装',
+                    '点击浏览器菜单按钮',
+                    '寻找"添加到主屏幕"或"安装应用"选项',
+                    '按照浏览器提示完成安装',
                     '从桌面或应用列表启动'
                 ];
             }
@@ -1129,8 +1140,10 @@
             // 检查是否已经显示过安装指引
             const guideShown = localStorage.getItem('installGuideShown');
             
-            // 对于支持PWA但没有beforeinstallprompt的情况
-            if ((isIOS && isSafari) || (isAndroid && !deferredPrompt)) {
+            // 对于需要手动引导安装的情况
+            if (isIOS || (isAndroid && !deferredPrompt)) {
+                // iOS上所有浏览器都需要手动引导
+                // Android上没有beforeinstallprompt的浏览器也需要手动引导
                 if (!guideShown) {
                     installButton.style.display = 'flex';
                     installButton.innerHTML = `
